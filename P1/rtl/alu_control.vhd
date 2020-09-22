@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 -- Bloque de control para la ALU. Arq0 2019-2020.
 --
--- (INCLUIR AQUI LA INFORMACION SOBRE LOS AUTORES, Quitar este mensaje)
+-- Pablo Izaguirre García - pablo.izaguirre@estudiante.uam.es
+-- Paula Samper López - paula.samper@estudiante.uam.es
 --
 --------------------------------------------------------------------------------
 
