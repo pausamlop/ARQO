@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 -- Procesador MIPS con pipeline curso Arquitectura 2020-2021
 --
--- (INCLUIR AQUI LA INFORMACION SOBRE LOS AUTORES)
+-- Pablo Izaguirre García - pablo.izaguirre@estudiante.uam.es
+-- Paula Samper López - paula.samper@estudiante.uam.es
 --
 --------------------------------------------------------------------------------
 
