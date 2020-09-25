@@ -28,6 +28,8 @@ end processor;
 
 architecture rtl of processor is
 
+  -- COMPONENTS 
+
   component alu
     port(
       OpA : in std_logic_vector (31 downto 0);
@@ -81,6 +83,10 @@ architecture rtl of processor is
    );
  end component alu_control;
 
+
+ -- SIGNALS 
+
+
   signal Alu_Op2      : std_logic_vector(31 downto 0);
   signal ALU_Igual    : std_logic;
   signal AluControl   : std_logic_vector(3 downto 0);
@@ -109,8 +115,12 @@ architecture rtl of processor is
 
 begin
 
+
+  -- ASIGNACIONES
+
   PC_next <= Addr_Jump_dest when desition_Jump = '1' else PC_plus4;
 
+  -- PROCESS ASÍNCRONO
   PC_reg_proc: process(Clk, Reset)
   begin
     if Reset = '1' then
@@ -124,6 +134,8 @@ begin
   IAddr       <= PC_reg;
   Instruction <= IDataIn;
 
+
+  ---------- PORT MAP REGSMIPS ---------- 
   RegsMIPS : reg_bank
   port map (
     Clk   => Clk,
@@ -136,7 +148,10 @@ begin
     Wd3   => reg_RD_data,
     We3   => Ctrl_RegWrite
   );
+  -----------------------------------------
 
+
+  ---------- PORT MAP UNIDADCONTROL ---------- 
   UnidadControl : control_unit
   port map(
     OpCode   => Instruction(31 downto 26),
@@ -154,6 +169,8 @@ begin
     RegWrite => Ctrl_RegWrite,
     RegDst   => Ctrl_RegDest
   );
+  -----------------------------------------
+
 
   Inm_ext        <= x"FFFF" & Instruction(15 downto 0) when Instruction(15)='1' else
                     x"0000" & Instruction(15 downto 0);
@@ -168,6 +185,7 @@ begin
                     Addr_Branch when Ctrl_Branch='1' else
                     (others =>'0');
 
+  ---------- PORT MAP ALU_CONTROL_I ---------- 
   Alu_control_i: alu_control
   port map(
     -- Entradas:
@@ -176,7 +194,9 @@ begin
     -- Salida de control para la ALU:
     ALUControl => AluControl -- Define operacion a ejecutar por la ALU
   );
+  -----------------------------------------
 
+   ---------- PORT MAP ALUMIPS---------- 
   Alu_MIPS : alu
   port map (
     OpA     => reg_RS,
@@ -185,6 +205,9 @@ begin
     Result  => Alu_Res,
     Zflag   => ALU_IGUAL
   );
+  -----------------------------------------
+
+  -- MAS ASIGNACIONES
 
   Alu_Op2    <= reg_RT when Ctrl_ALUSrc = '0' else Inm_ext;
   reg_RD     <= Instruction(20 downto 16) when Ctrl_RegDest = '0' else Instruction(15 downto 11);
@@ -196,5 +219,7 @@ begin
   dataIn_Mem <= DDataIn;
 
   reg_RD_data <= dataIn_Mem when Ctrl_MemToReg = '1' else Alu_Res;
+
+
 
 end architecture;

@@ -35,6 +35,7 @@ architecture rtl of alu_control is
 
 begin
 
+   -- esto esta un poco guarro
   AluControl <= ALU_ADD when AluOp = "000" else -- lw o addi o sw, que hace una suma
                 ALU_S16 when AluOp = "011" else -- lui,
                 ALU_SUB when AluOp = "001" else -- beq
