@@ -31,17 +31,21 @@ architecture rtl of alu_control is
   constant ALU_SUB  : t_aluControl := "0001";
   constant ALU_ADD  : t_aluControl := "0000";
   constant ALU_SLT  : t_aluControl := "1010";
-  constant ALU_S16  : t_aluControl := "1101";
+  constant ALU_S16  : t_aluControl := "1101"; -- 0000 al final
 
 begin
 
-  AluControl <= ALU_ADD when AluOp = "000" else -- lw o sw, que hace una suma
+  AluControl <= ALU_ADD when AluOp = "000" else -- lw o addi o sw, que hace una suma
                 ALU_S16 when AluOp = "011" else -- lui,
+                ALU_SUB when AluOp = "001" else -- beq
+                ALU_SLT when AluOp = "111" else -- slti
                 ALU_ADD when AluOp = "010" and Funct = "100000" else -- add
                 ALU_SUB when AluOp = "010" and Funct = "100010" else -- sub
                 ALU_AND when AluOp = "010" and Funct = "100100" else -- and
                 ALU_OR  when AluOp = "010" and Funct = "100101" else -- or
+                ALU_XOR when AluOp = "010" and Funct = "100110" else -- xor
                 ALU_SLT when AluOp = "010" and Funct = "101010" else -- slt
                 ALU_NOT;-- when AluOp_IDEX = "10" and Inm_ext_IDEX(5 downto 0) = "100110"; -- xor
+
 
 end architecture;
