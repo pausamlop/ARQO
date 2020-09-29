@@ -69,7 +69,9 @@ architecture rtl of processor is
         ALUOp    : out  std_logic_vector (2 downto 0); -- Tipo operacion para control de la ALU
         -- Seniales para el GPR
         RegWrite : out  std_logic; -- 1=Escribir registro
-        RegDst   : out  std_logic  -- 0=Reg. destino es rt, 1=rd
+        RegDst   : out  std_logic; -- 0=Reg. destino es rt, 1=rd
+        -- Senial de salto
+        Jump     : out  std_logic
      );
   end component;
 
@@ -156,7 +158,7 @@ begin
   port map(
     OpCode   => Instruction(31 downto 26),
     -- Señales para el PC
-    --Jump   => CONTROL_JUMP,
+    Jump     => Ctrl_Jump,
     Branch   => Ctrl_Branch,
     -- Señales para la memoria
     MemToReg => Ctrl_MemToReg,
@@ -176,8 +178,6 @@ begin
                     x"0000" & Instruction(15 downto 0);
   Addr_Jump      <= PC_plus4(31 downto 28) & Instruction(25 downto 0) & "00";
   Addr_Branch    <= PC_plus4 + ( Inm_ext(29 downto 0) & "00");
-
-  Ctrl_Jump      <= '0'; --nunca salto incondicional
 
   Regs_eq_branch <= '1' when (reg_RS = reg_RT) else '0';
   desition_Jump  <= Ctrl_Jump or (Ctrl_Branch and Regs_eq_branch);
