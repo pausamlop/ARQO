@@ -179,8 +179,8 @@ begin
   Addr_Jump      <= PC_plus4(31 downto 28) & Instruction(25 downto 0) & "00";
   Addr_Branch    <= PC_plus4 + ( Inm_ext(29 downto 0) & "00");
 
-  Regs_eq_branch <= '1' when (reg_RS = reg_RT) else '0';
-  desition_Jump  <= Ctrl_Jump or (Ctrl_Branch and Regs_eq_branch);
+  --Regs_eq_branch <= '1' when (reg_RS = reg_RT) else '0';
+  desition_Jump  <= Ctrl_Jump or (Ctrl_Branch and ALU_IGUAL);
   Addr_Jump_dest <= Addr_Jump   when Ctrl_Jump='1' else
                     Addr_Branch when Ctrl_Branch='1' else
                     (others =>'0');
