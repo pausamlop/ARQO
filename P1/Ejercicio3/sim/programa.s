@@ -48,6 +48,7 @@ main:
   or $s6, $s0, $t2  # or $r22, $r16, $r10  -> r22=r16 or r10  = 14
   slt $s7, $t1, $t2 # slt $r23, $r9, $r10  -> r23=1 si r9 < r10 else 0  = 1
   slt $t8, $s0, $t2 # slt $r24, $r16, $r10 -> r24=1 si r16 < r10 else 0 = 0
+  slt $t8, $s0, $t2 # slt $r24, $r16, $r10 -> r24=1 si r16 < r10 else 0 = 0
   
   # carga datos inmediatos en la parte alta de registros
   lui $t1, 1 # lui $r9, 1  -> queda a 65536  (0x00010000)
@@ -59,43 +60,20 @@ main:
   #     (nota: tras cada beq el ensamblador insertara un NOP -instruccion 0x000000000-
   #     debido al "delayed branching" de MIPS)
   beq $s1, $s2, salto # beq $r17, $r18, salto -> como $r17=$r18=3, salta
-  nop
-  nop
-  nop
   add $t0, $s0, $s1   # add $r8,  $r16, $r17  -> se ejecuta, r8  = 15
   add $t1, $s2, $s3   # add $r9,  $r18, $r19  -> se ejecuta, r9  = 3
   add $t2, $s4, $s5   # add $r10, $r20, $r21  -> no se ejecuta, r10 no cambia
 salto:
-  sub $t4, $s0, $t7     # sub $r12, $r16, $r15    -> r12 = 9 // la segunda vez que se ejecuta r12 = 9-196608 = -196599
-  beq $s3, $s4, nosalto # beq $r19, $r20, nosalto -> este branch NO debe ejecutarse // En la segunda vez si que se ejecuta
-  nop
-  nop
-  nop
-instrucciones_nuevas:
-  addi $s1, $s0, -12  # addi $r17, $r16, -12  -> r17 = 0
-  addi $s0, $s0, 4    # addi $r16, $r16, 4    -> r16 = 12 + 4 = 16
-  slti $t3, $t4, 10   # slti $r11, $r12, 10   -> r12 = 9 < 10, por lo tanto r11 = 1
-  slti $t3, $t4, 9    # slti $r11, $r12, 9    -> r12 = 9 >=9, por lo tanto r11 = 0
-  j target
-  nop
-  nop
-  nop
-target:
-  add $t7, $t1, $t2 # add $r15, $r9, $r10  -> r15=196608
-  add $s0, $t3, $t4 # add $r16, $r11, $r12 -> r16=9
-  addi $s3, $s4, 0  # addi $r19, $r20, 0   -> r19=2
-  j salto
-  nop
+  sub $t4, $s0, $t7     # sub $r12, $r16, $r15    -> r12 = 9
+  beq $s3, $s4, nosalto # beq $r19, $r20, nosalto -> este branch NO debe ejecutarse
 final:
-  j final                 # Se queda en un bucle infinito
-  nop
   beq $zero, $zero, final # -> bucle infinito, volvera aqui tras varios NOPs.
   nop
   nop
   nop
   nop
 nosalto:
-  lui $t2, 0xFFFF           # lui $r10, 0xFFFF 
+  lui $t2, 0xFFFF  # lui $r10, 0xFFFF -> no debe ejecutarse
   beq $zero, $zero, final
   nop
   nop
