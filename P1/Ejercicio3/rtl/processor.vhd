@@ -191,7 +191,7 @@ enable_ID_EX <= '1';
 enable_EX_MEM <= '1';
 enable_MEM_WB <= '1';
 
-IF_ID_reg_proc: process(Clk, Reset, enable_IF_ID)
+IF_ID_reg_proc: process(Clk, Reset)
 begin
   if reset = '1' then
     PC_plus4_ID <= (others => '0');
@@ -204,7 +204,7 @@ begin
   end if;
 end process;
 
-ID_EX_reg_proc: process(Clk, reset, enable_ID_EX)
+ID_EX_reg_proc: process(Clk, reset)
 begin
   if Reset = '1' then
     mux1 <= (others => '0');
@@ -248,7 +248,7 @@ begin
 end process;
 
 
-EX_MEM_reg_proc: process(Clk, reset, enable_EX_MEM)
+EX_MEM_reg_proc: process(Clk, reset)
 begin
   if Reset = '1' then
     reg_RD_MEM <= (others => '0');
@@ -283,7 +283,7 @@ begin
   end if;
 end process;
 
-MEM_WB_reg_proc: process(Clk, reset, enable_MEM_WB)
+MEM_WB_reg_proc: process(Clk, reset)
 begin
   if Reset = '1' then
     reg_RD_WB <= (others => '0');
@@ -293,10 +293,10 @@ begin
     Ctrl_MemToReg_WB <= '0'; 
     Ctrl_RegWrite_WB <= '0';
     
-  elsif rising_edge(Clk) then+
+  elsif rising_edge(Clk) then
     if enable_MEM_WB = '1' then
       reg_RD_WB <= reg_RD_MEM;
-      reg_RT_WB <= reg_RT_MEM;
+      reg_RT_WB <= Alu_Res_MEM; -- reg_RT_MEM
       dataIn_Mem_WB <= dataIn_Mem_MEM;
 
       -- Unidad de Control
