@@ -196,9 +196,11 @@ begin
   if reset = '1' then
     PC_plus4_ID <= (others => '0');
     Instruction_ID <= (others => '0');
-  elsif rising_edge(Clk) and enable_IF_ID = '1' then
-    PC_plus4_ID <= PC_plus4_IF;
-    Instruction_ID <= Instruction_IF;
+  elsif rising_edge(Clk) then
+    if enable_IF_ID = '1' then
+      PC_plus4_ID <= PC_plus4_IF;
+      Instruction_ID <= Instruction_IF;
+    end if;
   end if;
 end process;
 
@@ -222,23 +224,25 @@ begin
     Ctrl_RegWrite_EX <= '0';
     Ctrl_ALUOp_EX <= (others =>'0');
     
-  elsif rising_edge(Clk) and enable_ID_EX = '1' then
-    mux1 <= Instruction_ID(20 downto 16);
-    mux2 <= Instruction_ID(15 downto 11);
-    Inm_ext_EX <= Inm_ext_ID;
-    reg_RT_EX <= reg_RT_ID;
-    reg_RS_EX <= reg_RS_ID;
-    PC_plus4_EX <= PC_plus4_ID;
+  elsif rising_edge(Clk) then
+    if enable_ID_EX = '1' then
+      mux1 <= Instruction_ID(20 downto 16);
+      mux2 <= Instruction_ID(15 downto 11);
+      Inm_ext_EX <= Inm_ext_ID;
+      reg_RT_EX <= reg_RT_ID;
+      reg_RS_EX <= reg_RS_ID;
+      PC_plus4_EX <= PC_plus4_ID;
 
-    -- Unidad de Control
-    Ctrl_Branch_EX <= Ctrl_Branch_ID;
-    Ctrl_MemWrite_EX <= Ctrl_MemWrite_ID;
-    Ctrl_MemRead_EX <= Ctrl_MemRead_ID;
-    Ctrl_ALUSrc_EX <= Ctrl_ALUSrc_ID;
-    Ctrl_RegDest_EX <= Ctrl_RegDest_ID;
-    Ctrl_MemToReg_EX <= Ctrl_MemToReg_ID; 
-    Ctrl_RegWrite_EX <= Ctrl_RegWrite_ID;
-    Ctrl_ALUOp_EX <= Ctrl_ALUOp_ID;
+      -- Unidad de Control
+      Ctrl_Branch_EX <= Ctrl_Branch_ID;
+      Ctrl_MemWrite_EX <= Ctrl_MemWrite_ID;
+      Ctrl_MemRead_EX <= Ctrl_MemRead_ID;
+      Ctrl_ALUSrc_EX <= Ctrl_ALUSrc_ID;
+      Ctrl_RegDest_EX <= Ctrl_RegDest_ID;
+      Ctrl_MemToReg_EX <= Ctrl_MemToReg_ID; 
+      Ctrl_RegWrite_EX <= Ctrl_RegWrite_ID;
+      Ctrl_ALUOp_EX <= Ctrl_ALUOp_ID;
+    end if;
 
   end if;
 end process;
@@ -260,19 +264,21 @@ begin
     Ctrl_MemToReg_MEM <= '0'; 
     Ctrl_RegWrite_MEM <= '0';
     
-  elsif rising_edge(Clk) and enable_EX_MEM = '1' then
-    reg_RD_MEM <= reg_RD_EX;
-    reg_RT_MEM <= reg_RT_EX;
-    Alu_Res_MEM <= Alu_Res_EX;
-    Alu_Igual_MEM <= Alu_Igual_EX;
-    Addr_Branch_MEM <= Addr_Branch_EX;
+  elsif rising_edge(Clk) then
+    if enable_EX_MEM = '1' then
+      reg_RD_MEM <= reg_RD_EX;
+      reg_RT_MEM <= reg_RT_EX;
+      Alu_Res_MEM <= Alu_Res_EX;
+      Alu_Igual_MEM <= Alu_Igual_EX;
+      Addr_Branch_MEM <= Addr_Branch_EX;
 
-    -- Unidad de Control
-    Ctrl_Branch_MEM <= Ctrl_Branch_EX;
-    Ctrl_MemWrite_MEM <= Ctrl_MemWrite_EX;
-    Ctrl_MemRead_MEM <= Ctrl_MemRead_EX;
-    Ctrl_MemToReg_MEM <= Ctrl_MemToReg_EX; 
-    Ctrl_RegWrite_MEM <= Ctrl_RegWrite_EX;
+      -- Unidad de Control
+      Ctrl_Branch_MEM <= Ctrl_Branch_EX;
+      Ctrl_MemWrite_MEM <= Ctrl_MemWrite_EX;
+      Ctrl_MemRead_MEM <= Ctrl_MemRead_EX;
+      Ctrl_MemToReg_MEM <= Ctrl_MemToReg_EX; 
+      Ctrl_RegWrite_MEM <= Ctrl_RegWrite_EX;
+    end if;
 
   end if;
 end process;
@@ -287,14 +293,16 @@ begin
     Ctrl_MemToReg_WB <= '0'; 
     Ctrl_RegWrite_WB <= '0';
     
-  elsif rising_edge(Clk) and enable_MEM_WB = '1' then
-    reg_RD_WB <= reg_RD_MEM;
-    reg_RT_WB <= reg_RT_MEM;
-    dataIn_Mem_WB <= dataIn_Mem_MEM;
+  elsif rising_edge(Clk) then+
+    if enable_MEM_WB = '1' then
+      reg_RD_WB <= reg_RD_MEM;
+      reg_RT_WB <= reg_RT_MEM;
+      dataIn_Mem_WB <= dataIn_Mem_MEM;
 
-    -- Unidad de Control
-    Ctrl_MemToReg_WB <= Ctrl_MemToReg_MEM; 
-    Ctrl_RegWrite_WB <= Ctrl_RegWrite_MEM;
+      -- Unidad de Control
+      Ctrl_MemToReg_WB <= Ctrl_MemToReg_MEM; 
+      Ctrl_RegWrite_WB <= Ctrl_RegWrite_MEM;
+    end if;
 
   end if;
 end process;
