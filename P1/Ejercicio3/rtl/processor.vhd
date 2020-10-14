@@ -122,7 +122,6 @@ architecture rtl of processor is
  signal reg_RS_EX         : std_logic_vector(31 downto 0);
  signal reg_RT_EX         : std_logic_vector(31 downto 0);
  signal reg_RT_MEM        : std_logic_vector(31 downto 0);
- signal reg_RT_WB         : std_logic_vector(31 downto 0);
 
  signal Ctrl_Jump_ID         : std_logic;
 
@@ -132,6 +131,7 @@ architecture rtl of processor is
 
  signal Alu_Res_EX        : std_logic_vector(31 downto 0);
  signal Alu_Res_MEM       : std_logic_vector(31 downto 0);
+ signal Alu_Res_WB         : std_logic_vector(31 downto 0);
 
  -- SIGNALS
 
@@ -287,7 +287,7 @@ MEM_WB_reg_proc: process(Clk, reset)
 begin
   if Reset = '1' then
     reg_RD_WB <= (others => '0');
-    reg_RT_WB <= (others => '0');
+    Alu_Res_WB <= (others => '0');
     dataIn_Mem_WB <= (others => '0');
     -- Unidad de Control
     Ctrl_MemToReg_WB <= '0'; 
@@ -296,7 +296,7 @@ begin
   elsif rising_edge(Clk) then
     if enable_MEM_WB = '1' then
       reg_RD_WB <= reg_RD_MEM;
-      reg_RT_WB <= Alu_Res_MEM; -- reg_RT_MEM
+      Alu_Res_WB <= Alu_Res_MEM; -- reg_RT_MEM
       dataIn_Mem_WB <= dataIn_Mem_MEM;
 
       -- Unidad de Control
@@ -388,7 +388,7 @@ end process;
 
   -- WB STAGE -----------------------------
 
-  reg_RD_data <= dataIn_Mem_WB when Ctrl_MemToReg_WB = '1' else reg_RT_WB;
+  reg_RD_data <= dataIn_Mem_WB when Ctrl_MemToReg_WB = '1' else Alu_Res_WB;
 
 
 end architecture;
