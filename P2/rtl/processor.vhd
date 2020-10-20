@@ -87,12 +87,16 @@ architecture rtl of processor is
 
 
  -- SIGNALS 
+ signal Alu_Op1           : std_logic_vector(31 downto 0);
  signal Alu_Op2           : std_logic_vector(31 downto 0);
  signal AluControl        : std_logic_vector(3 downto 0);
  signal reg_RD_data       : std_logic_vector(31 downto 0);
  signal reg_RD_EX         : std_logic_vector(4 downto 0);
  signal reg_RD_MEM        : std_logic_vector(4 downto 0);
  signal reg_RD_WB         : std_logic_vector(4 downto 0);
+ signal num_regRs         : std_logic_vector(4 downto 0);
+ signal num_regRt         : std_logic_vector(4 downto 0);
+ signal mux_rt            : std_logic_vector(31 downto 0);
 
  signal Alu_Igual_EX      : std_logic;
  signal Alu_Igual_MEM     : std_logic;
@@ -133,7 +137,9 @@ architecture rtl of processor is
  signal Alu_Res_MEM       : std_logic_vector(31 downto 0);
  signal Alu_Res_WB         : std_logic_vector(31 downto 0);
 
- -- SIGNALS
+ -- CONTROL SIGNALS
+
+ signal Forward_A, Forward_B : std_logic_vector(1 downto 0);
 
  signal Ctrl_Branch_ID, Ctrl_MemWrite_ID, Ctrl_MemRead_ID, Ctrl_ALUSrc_ID, Ctrl_RegDest_ID, Ctrl_MemToReg_ID, Ctrl_RegWrite_ID : std_logic;
  signal Ctrl_ALUOp_ID     : std_logic_vector(2 downto 0);
@@ -213,6 +219,8 @@ begin
     reg_RT_EX <= (others => '0');
     reg_RS_EX <= (others => '0');
     PC_plus4_EX <= (others => '0');
+    num_regRs <= (others => '0);
+    num_regRt <= (others => '0);
 
     -- Unidad de Control
     Ctrl_Branch_EX <= '0';
@@ -223,6 +231,8 @@ begin
     Ctrl_MemToReg_EX <= '0'; 
     Ctrl_RegWrite_EX <= '0';
     Ctrl_ALUOp_EX <= (others =>'0');
+    num_regRs <= Intructions(25 downto 21);
+    num_regRt <= Intructions(20 downto 16);
     
   elsif rising_edge(Clk) then
     if enable_ID_EX = '1' then
@@ -267,7 +277,7 @@ begin
   elsif rising_edge(Clk) then
     if enable_EX_MEM = '1' then
       reg_RD_MEM <= reg_RD_EX;
-      reg_RT_MEM <= reg_RT_EX;
+      reg_RT_MEM <= mux_rt;
       Alu_Res_MEM <= Alu_Res_EX;
       Alu_Igual_MEM <= Alu_Igual_EX;
       Addr_Branch_MEM <= Addr_Branch_EX;
@@ -364,7 +374,7 @@ end process;
    ---------- PORT MAP ALUMIPS---------- 
   Alu_MIPS : alu
   port map (
-    OpA     => reg_RS_EX,
+    OpA     => Alu_Op1,
     OpB     => Alu_Op2,
     Control => AluControl,
     Result  => Alu_Res_EX,
@@ -372,9 +382,32 @@ end process;
   );
   -----------------------------------------
 
+    ---------- PORT MAP FORWARDING UNIT ---------- 
+    Forwarding_Unit : forwarding_unit
+    port map (
+      ExMem_RegRd     => reg_RD_MEM,
+      MemWb_RegRd     => reg_RD_WB,
+      IdEx_RegRs      => num_regRs,
+      IdEx_RegRt      => num_regRt,
+      ForwardA        => Forward_A,
+      ForwardB        => Forward_B,
+      ExMem_RegWrite  => Ctrl_RegWrite_MEM,
+      MemWb_RegWrite  => Ctrl_RegWrite_WB
+    );
+    -----------------------------------------
+
   -- EX STAGE -----------------------------
 
-  Alu_Op2    <= reg_RT_EX when Ctrl_ALUSrc_EX = '0' else Inm_ext_EX;
+  
+  Alu_Op1    <= reg_RS_EX when Forward_A = "00" else
+                reg_RD_WB when Forward_A = "01" else 
+                reg_RD_MEM when Forward_A = "10";
+
+  mux_rt <= reg_rt_EX when Forwarding_A = "00" else
+            reg_RD_WB when Forward_A = "01" else 
+            reg_RD_MEM when Forward_A = "10";
+
+  Alu_Op2    <= mux_rt when Ctrl_ALUSrc_EX = '0' else Inm_ext_EX;
   reg_RD_EX     <= mux1 when Ctrl_RegDest_EX = '0' else mux2;
   Addr_Branch_EX    <= PC_plus4_EX + ( Inm_ext_EX(29 downto 0) & "00");
 
