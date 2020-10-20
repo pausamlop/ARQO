@@ -382,19 +382,6 @@ end process;
   );
   -----------------------------------------
 
-    ---------- PORT MAP FORWARDING UNIT ---------- 
-    Forwarding_Unit : forwarding_unit
-    port map (
-      ExMem_RegRd     => reg_RD_MEM,
-      MemWb_RegRd     => reg_RD_WB,
-      IdEx_RegRs      => num_regRs,
-      IdEx_RegRt      => num_regRt,
-      ForwardA        => Forward_A,
-      ForwardB        => Forward_B,
-      ExMem_RegWrite  => Ctrl_RegWrite_MEM,
-      MemWb_RegWrite  => Ctrl_RegWrite_WB
-    );
-    -----------------------------------------
 
   -- EX STAGE -----------------------------
 
@@ -403,13 +390,30 @@ end process;
                 reg_RD_WB when Forward_A = "01" else 
                 reg_RD_MEM when Forward_A = "10";
 
-  mux_rt <= reg_rt_EX when Forwarding_A = "00" else
-            reg_RD_WB when Forward_A = "01" else 
-            reg_RD_MEM when Forward_A = "10";
+  mux_rt <= reg_rt_EX when Forward_B = "00" else
+            reg_RD_WB when Forward_B = "01" else 
+            reg_RD_MEM when Forward_B = "10";
 
   Alu_Op2    <= mux_rt when Ctrl_ALUSrc_EX = '0' else Inm_ext_EX;
   reg_RD_EX     <= mux1 when Ctrl_RegDest_EX = '0' else mux2;
   Addr_Branch_EX    <= PC_plus4_EX + ( Inm_ext_EX(29 downto 0) & "00");
+
+  
+  -- EX HAZARD
+  Forward_A <= "10" when (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0) and (reg_RD_MEM = num_regRs)) else "00";
+
+  Forward_B <= "10" when (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0) and (reg_RD_MEM = num_regRt)) else "00";
+
+  -- MEM HAZARD
+  Forward_A <= "01" when (Ctrl_RegWrite_WB and (reg_RD_WB != 0)
+                          and not (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0)
+                              and (reg_RD_MEM = num_regRs))
+                          and (reg_RD_WB = num_regRs)); 
+      
+  Forward_B <= "01" when (Ctrl_RegWrite_WB and (reg_RD_WB != 0)
+                          and not (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0)
+                              and (reg_RD_MEM = num_regRt ))
+                          and (reg_RD_WB = num_regRt));
 
   -- MEM STAGE ----------------------------
   
