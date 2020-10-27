@@ -135,7 +135,9 @@ architecture rtl of processor is
 
  signal Alu_Res_EX        : std_logic_vector(31 downto 0);
  signal Alu_Res_MEM       : std_logic_vector(31 downto 0);
- signal Alu_Res_WB         : std_logic_vector(31 downto 0);
+ signal Alu_Res_WB        : std_logic_vector(31 downto 0);
+
+ signal hazard_efective   : std_logic;
 
  -- CONTROL SIGNALS
 
@@ -153,6 +155,7 @@ architecture rtl of processor is
 
 
  -- ENABLE SIGNALS
+ signal PCWrite                  : std_logic;
  signal enable_IF_ID             : std_logic;
  signal enable_ID_EX             : std_logic;
  signal enable_EX_MEM            : std_logic;
@@ -183,7 +186,9 @@ begin
   if Reset = '1' then
     PC_reg <= (others => '0');
   elsif rising_edge(Clk) then
-    PC_reg <= PC_next;
+    if PCWrite = '1' then
+      PC_reg <= PC_next;
+    end if;
   end if;
 end process;
 
@@ -231,8 +236,7 @@ begin
     Ctrl_MemToReg_EX <= '0'; 
     Ctrl_RegWrite_EX <= '0';
     Ctrl_ALUOp_EX <= (others =>'0');
-    num_regRs <= Intructions(25 downto 21);
-    num_regRt <= Intructions(20 downto 16);
+
     
   elsif rising_edge(Clk) then
     if enable_ID_EX = '1' then
@@ -242,6 +246,8 @@ begin
       reg_RT_EX <= reg_RT_ID;
       reg_RS_EX <= reg_RS_ID;
       PC_plus4_EX <= PC_plus4_ID;
+      num_regRs <= Intructions(25 downto 21);
+      num_regRt <= Intructions(20 downto 16);
 
       -- Unidad de Control
       Ctrl_Branch_EX <= Ctrl_Branch_ID;
@@ -359,7 +365,36 @@ end process;
   Inm_ext_ID        <= x"FFFF" & Instruction_ID(15 downto 0) when Instruction_ID(15)='1' else
                     x"0000" & Instruction_ID(15 downto 0);
   
-                    
+  --WARNING: igual se puede simplificar lo de abajo
+  -- HAZARD UNIT
+
+  hazard_efective   <= '1'  when Ctrl_MemRead_ID and
+                              	((num_regRt = Instruction_ID(25 downto 21)) or
+                              	(num_regRt = Instruction_ID(20 downto 16))) 
+							else '0'
+				
+            
+  hazard_process: process(hazard_efective)
+    begin
+        if hazard_efective = '1' then
+
+			
+    end process;
+--   enable_IF_ID      <= '0'  when hazard_efective = '1' else '1'
+
+--   PCWrite           <= '1'  when hazard_efective = '1' else '0'
+                              
+--   Ctrl_Branch_EX <= '0'  when hazard_efective = '1';
+--   Ctrl_MemWrite_EX <= '0'  when hazard_efective = '1';
+--   Ctrl_MemRead_EX <= '0'  when hazard_efective = '1';
+--   Ctrl_ALUSrc_EX <= ''0'  when hazard_efective = '1';
+--   Ctrl_RegDest_EX <= '0'  when hazard_efective = '1';
+--   Ctrl_MemToReg_EX <= '0'  when hazard_efective = '1'; 
+--   Ctrl_RegWrite_EX <= '0'  when hazard_efective = '1';
+--   Ctrl_ALUOp_EX <= (others =>'0') when hazard_efective = '1';
+  
+
+
   ---------- PORT MAP ALU_CONTROL_I ----------
   Alu_control_i: alu_control
   port map(
