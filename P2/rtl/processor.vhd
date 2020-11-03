@@ -224,8 +224,8 @@ begin
     reg_RT_EX <= (others => '0');
     reg_RS_EX <= (others => '0');
     PC_plus4_EX <= (others => '0');
-    num_regRs <= (others => '0);
-    num_regRt <= (others => '0);
+    num_regRs <= (others => '0');
+    num_regRt <= (others => '0');
 
     -- Unidad de Control
     Ctrl_Branch_EX <= '0';
@@ -246,8 +246,8 @@ begin
       reg_RT_EX <= reg_RT_ID;
       reg_RS_EX <= reg_RS_ID;
       PC_plus4_EX <= PC_plus4_ID;
-      num_regRs <= Intructions(25 downto 21);
-      num_regRt <= Intructions(20 downto 16);
+      num_regRs <= Instruction_ID(25 downto 21);
+      num_regRt <= Instruction_ID(20 downto 16);
 
       -- Unidad de Control
       Ctrl_Branch_EX <= Ctrl_Branch_ID;
@@ -368,31 +368,30 @@ end process;
   --WARNING: igual se puede simplificar lo de abajo
   -- HAZARD UNIT
 
-  hazard_efective   <= '1'  when Ctrl_MemRead_ID and
-                              	((num_regRt = Instruction_ID(25 downto 21)) or
-                              	(num_regRt = Instruction_ID(20 downto 16))) 
-							else '0'
-				
+  -- hazard_efective   <= '1'  when Ctrl_MemRead_ID = '1' and
+  --                             	((num_regRt = Instruction_ID(25 downto 21)) or
+  --                             	(num_regRt = Instruction_ID(20 downto 16))) 
+	-- 						else '0';
+    PCWrite <= '1'
             
-  hazard_process: process(hazard_efective)
-    begin
-        if hazard_efective = '1' then
-
-			
-    end process;
---   enable_IF_ID      <= '0'  when hazard_efective = '1' else '1'
-
---   PCWrite           <= '1'  when hazard_efective = '1' else '0'
-                              
---   Ctrl_Branch_EX <= '0'  when hazard_efective = '1';
---   Ctrl_MemWrite_EX <= '0'  when hazard_efective = '1';
---   Ctrl_MemRead_EX <= '0'  when hazard_efective = '1';
---   Ctrl_ALUSrc_EX <= ''0'  when hazard_efective = '1';
---   Ctrl_RegDest_EX <= '0'  when hazard_efective = '1';
---   Ctrl_MemToReg_EX <= '0'  when hazard_efective = '1'; 
---   Ctrl_RegWrite_EX <= '0'  when hazard_efective = '1';
---   Ctrl_ALUOp_EX <= (others =>'0') when hazard_efective = '1';
-  
+  -- hazard_process: process(hazard_efective)
+  --   begin
+  --       if hazard_efective = '1' then
+  --         enable_IF_ID <= '0';
+  --         PCWrite <= '1';
+  --         Ctrl_Branch_EX <= '0';
+  --         Ctrl_MemWrite_EX <= '0';
+  --         Ctrl_MemRead_EX <= '0';
+  --         Ctrl_ALUSrc_EX <= '0';
+  --         Ctrl_RegDest_EX <= '0';
+  --         Ctrl_MemToReg_EX <= '0';
+  --         Ctrl_RegWrite_EX <= '0';
+  --         Ctrl_ALUOp_EX <= (others =>'0');
+  --       else
+  --         enable_IF_ID <= '1';
+  --         PCWrite <= '0';       
+  --       end if;
+  --   end process;
 
 
   ---------- PORT MAP ALU_CONTROL_I ----------
@@ -422,12 +421,12 @@ end process;
 
   
   Alu_Op1    <= reg_RS_EX when Forward_A = "00" else
-                reg_RD_WB when Forward_A = "01" else 
-                reg_RD_MEM when Forward_A = "10";
+                reg_RD_data when Forward_A = "01" else --reg_RD_data
+                Alu_res_MEM when Forward_A = "10";    --Alu_Res_MEM
 
-  mux_rt <= reg_rt_EX when Forward_B = "00" else
-            reg_RD_WB when Forward_B = "01" else 
-            reg_RD_MEM when Forward_B = "10";
+  mux_rt     <= reg_rt_EX when Forward_B = "00" else
+                reg_RD_data when Forward_B = "01" else --reg_RD_data
+                Alu_res_MEM when Forward_B = "10";    --Alu_Res_MEM
 
   Alu_Op2    <= mux_rt when Ctrl_ALUSrc_EX = '0' else Inm_ext_EX;
   reg_RD_EX     <= mux1 when Ctrl_RegDest_EX = '0' else mux2;
@@ -435,20 +434,21 @@ end process;
 
   
   -- EX HAZARD
-  Forward_A <= "10" when (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0) and (reg_RD_MEM = num_regRs)) else "00";
+  --Forward_A <= "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRs)) else "00";
 
-  Forward_B <= "10" when (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0) and (reg_RD_MEM = num_regRt)) else "00";
+  --Forward_B <= "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRt)) else "00";
 
   -- MEM HAZARD
-  Forward_A <= "01" when (Ctrl_RegWrite_WB and (reg_RD_WB != 0)
-                          and not (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0)
-                              and (reg_RD_MEM = num_regRs))
-                          and (reg_RD_WB = num_regRs)); 
-      
-  Forward_B <= "01" when (Ctrl_RegWrite_WB and (reg_RD_WB != 0)
-                          and not (Ctrl_RegWrite_MEM and (reg_RD_MEM != 0)
-                              and (reg_RD_MEM = num_regRt ))
-                          and (reg_RD_WB = num_regRt));
+  Forward_A <= "01" when (Ctrl_RegWrite_WB = '1' and (reg_RD_WB /= "00000")
+                          and not (reg_RD_EX = num_regRs) 
+                          and (reg_RD_WB = num_regRs))
+                          else "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRs)) else "00";
+
+  Forward_B <= "01" when (Ctrl_RegWrite_WB = '1' and (reg_RD_WB /= "00000")
+                          and not (reg_RD_EX = num_regRt)   
+                          and (reg_RD_WB = num_regRt))
+                          else "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRt)) else "00";            
+
 
   -- MEM STAGE ----------------------------
   

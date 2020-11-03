@@ -7,9 +7,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/TEMP.LAPTOP-J197G750.000.001.002/Desktop/ARQO/P1/sim
+Z0 dC:/Users/pablo/code/ARQO/P1/sim
 Ealu
-Z1 w1602606729
+Z1 w1602698077
 Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
@@ -23,9 +23,9 @@ VcFW5ZB;b38>]=Cd<<nO5X0
 !s100 PZenWJ@F@Xc]_f<F91A7N1
 Z8 OP;C;10.4a;61
 32
-Z9 !s110 1602610873
+Z9 !s110 1602698871
 !i10b 1
-Z10 !s108 1602610873.000000
+Z10 !s108 1602698871.000000
 Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/alu.vhd|
 Z12 !s107 ../rtl/alu.vhd|
 !i113 1
@@ -153,9 +153,9 @@ VSUe7POEDTIg<EjYIdM=hJ0
 !s100 DWj_g:Oh1NEB9L?NJ3>S33
 R8
 32
-Z26 !s110 1602610874
+Z26 !s110 1602698872
 !i10b 1
-Z27 !s108 1602610874.000000
+Z27 !s108 1602698872.000000
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|memory.vhd|
 Z29 !s107 memory.vhd|
 !i113 1
