@@ -36,14 +36,14 @@ main:
   lw $t5, 40($zero) # lw $r13, 40($r0) -> r13 no cambia
   lw $t6, 44($zero) # lw $r14, 44($r0) -> r14 no cambia
   
-  addi $t1, $t2, 3   # $t1 = 3
-  addi $t4, $t1, 1   # $t4 = r12 = 4
+  addi $t1, $t2, 3    # $t1 = 5
+  addi $t4, $t1, 1    # $t4 = r12 = 6
   
   add $t1, $t2, $t3   # $t1 = r9 = 6
-  sub $t4, $t1, $t2   # $t4 = r12 = 6 - 2 = 4   NO ES 1 - 2 = -2
+  sub $t4, $t1, $t2   # $t4 = r12 = 6 - 2 = 4     NO ES 1 - 2 = -2
 
-  add $t5, $t6, $t2   # $t5 = r13 = 32 - 2 = 30
-  sub $t1, $t3, $t5   # $t1 = r9 = 4 - 30 = -26 NO ES 4 - 16 = -12
+  add $t5, $t6, $t2   # $t5 = r13 = 32 + 2 = 34 = 0X22
+  sub $t1, $t3, $t5   # $t1 = r9 = 4 - 34 = -30   NO ES 4 - 16 = -12
 
   add $t2, $t3, $t4   # $t1 = r9 = 4 + 4 = 8
-  add $t6, $t2, $t2   # $t6 = r14 = 8 + 8 = 16  NO ES 2 + 2 = 4
+  add $t6, $t2, $t2   # $t6 = r14 = 8 + 8 = 16    NO ES 2 + 2 = 4

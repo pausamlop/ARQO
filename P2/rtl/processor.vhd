@@ -372,7 +372,7 @@ end process;
   --                             	((num_regRt = Instruction_ID(25 downto 21)) or
   --                             	(num_regRt = Instruction_ID(20 downto 16))) 
 	-- 						else '0';
-    PCWrite <= '1'
+    PCWrite <= '1';
             
   -- hazard_process: process(hazard_efective)
   --   begin
