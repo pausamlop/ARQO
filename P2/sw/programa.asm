@@ -45,5 +45,15 @@ main:
   add $t5, $t6, $t2   # $t5 = r13 = 32 + 2 = 34 = 0X22
   sub $t1, $t3, $t5   # $t1 = r9 = 4 - 34 = -30   NO ES 4 - 16 = -12
 
-  add $t2, $t3, $t4   # $t1 = r9 = 4 + 4 = 8
+  add $t2, $t3, $t4   # $t2 = r10 = 4 + 4 = 8
   add $t6, $t2, $t2   # $t6 = r14 = 8 + 8 = 16    NO ES 2 + 2 = 4
+
+	# utiliza un registro que se actualiza 2 ciclos antes
+  addi $t1, $t3, -3		# $t1 = r9 = 4 - 3 = 1
+	add $t4, $t5, $t6		# r12 = 34 + 16 = 40
+	add $t1, $t1, $t1 	# r9 = 1 + 1 = 2
+
+	# utiliza un registro que se actualiza por dos instrucciones distintas
+	add $t1, $t2, $t3 	# r9 = 8 + 4 = 12
+	sub $t1, $t5, $t6		# r9 = 34 - 16 = 18
+	add $t5, $t1, $t2		# r9 = 18 + 8 = 26					NO ES 12 + 8 = 20
