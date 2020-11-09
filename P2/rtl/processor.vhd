@@ -197,14 +197,13 @@ IAddr       <= PC_reg;
 Instruction_IF <= IDataIn;
 
 -------------------------------------------
-enable_IF_ID <= '1';
 enable_ID_EX <= '1';
 enable_EX_MEM <= '1';
 enable_MEM_WB <= '1';
 
 IF_ID_reg_proc: process(Clk, Reset)
 begin
-  if reset = '1' then
+  if Reset = '1' then
     PC_plus4_ID <= (others => '0');
     Instruction_ID <= (others => '0');
   elsif rising_edge(Clk) then
@@ -215,7 +214,7 @@ begin
   end if;
 end process;
 
-ID_EX_reg_proc: process(Clk, reset)
+ID_EX_reg_proc: process(Clk, Reset)
 begin
   if Reset = '1' then
     mux1 <= (others => '0');
@@ -264,7 +263,7 @@ begin
 end process;
 
 
-EX_MEM_reg_proc: process(Clk, reset)
+EX_MEM_reg_proc: process(Clk, Reset)
 begin
   if Reset = '1' then
     reg_RD_MEM <= (others => '0');
@@ -299,7 +298,7 @@ begin
   end if;
 end process;
 
-MEM_WB_reg_proc: process(Clk, reset)
+MEM_WB_reg_proc: process(Clk, Reset)
 begin
   if Reset = '1' then
     reg_RD_WB <= (others => '0');
@@ -367,31 +366,32 @@ end process;
   
   --WARNING: igual se puede simplificar lo de abajo
   -- HAZARD UNIT
+    hazard_efective <= '0';
+    -- hazard_efective   <= '1'  when Ctrl_MemRead_ID = '1' and
+    --                           	((num_regRt = Instruction_ID(25 downto 21)) or
+    --                           	(num_regRt = Instruction_ID(20 downto 16))) 
+    -- 						else '0';
+    
 
-  -- hazard_efective   <= '1'  when Ctrl_MemRead_ID = '1' and
-  --                             	((num_regRt = Instruction_ID(25 downto 21)) or
-  --                             	(num_regRt = Instruction_ID(20 downto 16))) 
-	-- 						else '0';
-    PCWrite <= '1';
             
-  -- hazard_process: process(hazard_efective)
-  --   begin
-  --       if hazard_efective = '1' then
-  --         enable_IF_ID <= '0';
-  --         PCWrite <= '1';
-  --         Ctrl_Branch_EX <= '0';
-  --         Ctrl_MemWrite_EX <= '0';
-  --         Ctrl_MemRead_EX <= '0';
-  --         Ctrl_ALUSrc_EX <= '0';
-  --         Ctrl_RegDest_EX <= '0';
-  --         Ctrl_MemToReg_EX <= '0';
-  --         Ctrl_RegWrite_EX <= '0';
-  --         Ctrl_ALUOp_EX <= (others =>'0');
-  --       else
-  --         enable_IF_ID <= '1';
-  --         PCWrite <= '0';       
-  --       end if;
-  --   end process;
+    hazard_process: process(hazard_efective, Clk)
+    begin
+        if hazard_efective = '1' then
+            enable_IF_ID <= '0';
+            PCWrite <= '1';
+            Ctrl_Branch_EX <= '0';
+            Ctrl_MemWrite_EX <= '0';
+            Ctrl_MemRead_EX <= '0';
+            Ctrl_ALUSrc_EX <= '0';
+            Ctrl_RegDest_EX <= '0';
+            Ctrl_MemToReg_EX <= '0';
+            Ctrl_RegWrite_EX <= '0';
+            Ctrl_ALUOp_EX <= (others =>'0');
+        else
+            enable_IF_ID <= '1';
+            PCWrite <= '0';  
+        end if;
+    end process;
 
 
   ---------- PORT MAP ALU_CONTROL_I ----------

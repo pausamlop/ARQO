@@ -36,6 +36,7 @@ main:
   lw $t5, 40($zero) # lw $r13, 40($r0) -> r13 no cambia
   lw $t6, 44($zero) # lw $r14, 44($r0) -> r14 no cambia
   
+	# la siguiente es la instruccion 0X48
   addi $t1, $t2, 3    # $t1 = 5
   addi $t4, $t1, 1    # $t4 = r12 = 6
   
@@ -57,3 +58,5 @@ main:
 	add $t1, $t2, $t3 	# r9 = 8 + 4 = 12
 	sub $t1, $t5, $t6		# r9 = 34 - 16 = 18
 	add $t5, $t1, $t2		# r9 = 18 + 8 = 26					NO ES 12 + 8 = 20
+
+	# instruccion numero 0X84
