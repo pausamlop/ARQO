@@ -50,7 +50,7 @@ main:
 
 	# utiliza un registro que se actualiza 2 ciclos antes
   addi $t1, $t3, -3		# $t1 = r9 = 4 - 3 = 1
-	add $t4, $t5, $t6		# r12 = 34 + 16 = 40
+	add $t4, $t5, $t6		# r12 = 34 + 16 = 50
 	add $t1, $t1, $t1 	# r9 = 1 + 1 = 2
 
 	# utiliza un registro que se actualiza por dos instrucciones distintas

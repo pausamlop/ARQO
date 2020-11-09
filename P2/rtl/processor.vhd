@@ -440,12 +440,12 @@ end process;
 
   -- MEM HAZARD
   Forward_A <= "01" when (Ctrl_RegWrite_WB = '1' and (reg_RD_WB /= "00000")
-                          and not (reg_RD_EX = num_regRs) 
+                          and not (reg_RD_MEM = num_regRs) 
                           and (reg_RD_WB = num_regRs))
                           else "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRs)) else "00";
 
   Forward_B <= "01" when (Ctrl_RegWrite_WB = '1' and (reg_RD_WB /= "00000")
-                          and not (reg_RD_EX = num_regRt)   
+                          and not (reg_RD_MEM = num_regRt)   
                           and (reg_RD_WB = num_regRt))
                           else "10" when ((Ctrl_RegWrite_MEM = '1' and (reg_RD_MEM /= "00000")) and (reg_RD_MEM = num_regRt)) else "00";            
 
