@@ -7,9 +7,9 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/pablo/code/ARQO/P1/Ejercicio3/sim
+Z0 dC:/Users/fsamp/Desktop/ARQO/P1/Ejercicio3/sim
 Ealu
-Z1 w1602585018
+Z1 w1604946067
 Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z3 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
@@ -23,9 +23,9 @@ VcFW5ZB;b38>]=Cd<<nO5X0
 !s100 PZenWJ@F@Xc]_f<F91A7N1
 Z8 OP;C;10.4a;61
 32
-Z9 !s110 1602695236
+Z9 !s110 1604949248
 !i10b 1
-Z10 !s108 1602695236.000000
+Z10 !s108 1604949248.000000
 Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/alu.vhd|
 Z12 !s107 ../rtl/alu.vhd|
 !i113 1
@@ -66,7 +66,7 @@ VZ;L`0_Q:loR6fdYnRnHJ?3
 !s100 [=oa`cnn?:?_DY4Y5;an@1
 R8
 32
-Z17 !s110 1602695237
+Z17 !s110 1604949249
 !i10b 1
 R10
 Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/alu_control.vhd|
@@ -95,14 +95,14 @@ R19
 R13
 R14
 Econtrol_unit
-Z20 w1602585019
+R1
 R2
 R3
 R4
 R5
 R0
-Z21 8../rtl/control_unit.vhd
-Z22 F../rtl/control_unit.vhd
+Z20 8../rtl/control_unit.vhd
+Z21 F../rtl/control_unit.vhd
 l0
 L13
 VdU<M7eORiZTfhaGdVe92i3
@@ -111,9 +111,9 @@ R8
 32
 R17
 !i10b 1
-Z23 !s108 1602695237.000000
-Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/control_unit.vhd|
-Z25 !s107 ../rtl/control_unit.vhd|
+Z22 !s108 1604949249.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/control_unit.vhd|
+Z24 !s107 ../rtl/control_unit.vhd|
 !i113 1
 R13
 R14
@@ -131,22 +131,22 @@ R8
 32
 R17
 !i10b 1
+R22
 R23
 R24
-R25
 !i113 1
 R13
 R14
 Ememory
-Z26 w1602584989
-Z27 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+R1
+Z25 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R3
 R2
 R5
 R4
 R0
-Z28 8memory.vhd
-Z29 Fmemory.vhd
+Z26 8memory.vhd
+Z27 Fmemory.vhd
 l0
 L18
 VSUe7POEDTIg<EjYIdM=hJ0
@@ -155,14 +155,14 @@ R8
 32
 R17
 !i10b 1
-R23
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|memory.vhd|
-Z31 !s107 memory.vhd|
+R22
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|memory.vhd|
+Z29 !s107 memory.vhd|
 !i113 1
-Z32 o-work work -2002 -explicit -O0
+Z30 o-work work -2002 -explicit -O0
 R14
 Abehavioral
-R27
+R25
 R3
 R2
 R5
@@ -176,21 +176,21 @@ R8
 32
 R17
 !i10b 1
-R23
-R30
-R31
+R22
+R28
+R29
 !i113 1
-R32
+R30
 R14
 Eprocessor
-Z33 w1602694360
+R1
 R2
 R3
 R4
 R5
 R0
-Z34 8../rtl/processor.vhd
-Z35 F../rtl/processor.vhd
+Z31 8../rtl/processor.vhd
+Z32 F../rtl/processor.vhd
 l0
 L13
 V4AH48lRbbT?k>3Ck6jKP=0
@@ -199,9 +199,9 @@ R8
 32
 R17
 !i10b 1
-R23
-Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/processor.vhd|
-Z37 !s107 ../rtl/processor.vhd|
+R22
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/processor.vhd|
+Z34 !s107 ../rtl/processor.vhd|
 !i113 1
 R13
 R14
@@ -219,21 +219,21 @@ R8
 32
 R17
 !i10b 1
-R23
-R36
-R37
+R22
+R33
+R34
 !i113 1
 R13
 R14
 Eprocessor_tb
-R26
+R1
 R3
 R2
 R4
 R5
 R0
-Z38 8processor_tb.vhd
-Z39 Fprocessor_tb.vhd
+Z35 8processor_tb.vhd
+Z36 Fprocessor_tb.vhd
 l0
 L14
 VFS:S<=BS=QLHS?YWLjYI11
@@ -242,11 +242,11 @@ R8
 32
 R17
 !i10b 1
-R23
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|processor_tb.vhd|
-Z41 !s107 processor_tb.vhd|
+R22
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|processor_tb.vhd|
+Z38 !s107 processor_tb.vhd|
 !i113 1
-R32
+R30
 R14
 Atb
 R3
@@ -262,21 +262,21 @@ R8
 32
 R17
 !i10b 1
-R23
-R40
-R41
+R22
+R37
+R38
 !i113 1
-R32
+R30
 R14
 Ereg_bank
-R20
+R1
 R2
 R3
 R4
 R5
 R0
-Z42 8../rtl/reg_bank.vhd
-Z43 F../rtl/reg_bank.vhd
+Z39 8../rtl/reg_bank.vhd
+Z40 F../rtl/reg_bank.vhd
 l0
 L15
 V^<XbNQFdQmV[kE65kfA<J1
@@ -286,8 +286,8 @@ R8
 R9
 !i10b 1
 R10
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/reg_bank.vhd|
-Z45 !s107 ../rtl/reg_bank.vhd|
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-check_synthesis|../rtl/reg_bank.vhd|
+Z42 !s107 ../rtl/reg_bank.vhd|
 !i113 1
 R13
 R14
@@ -306,8 +306,8 @@ R8
 R9
 !i10b 1
 R10
-R44
-R45
+R41
+R42
 !i113 1
 R13
 R14

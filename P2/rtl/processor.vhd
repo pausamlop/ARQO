@@ -137,7 +137,7 @@ architecture rtl of processor is
  signal Alu_Res_MEM       : std_logic_vector(31 downto 0);
  signal Alu_Res_WB        : std_logic_vector(31 downto 0);
 
- signal hazard_efective   : std_logic;
+ signal hazard_effective   : std_logic;
 
  -- CONTROL SIGNALS
 
@@ -366,32 +366,11 @@ end process;
   
   --WARNING: igual se puede simplificar lo de abajo
   -- HAZARD UNIT
-    hazard_efective <= '0';
-    -- hazard_efective   <= '1'  when Ctrl_MemRead_ID = '1' and
-    --                           	((num_regRt = Instruction_ID(25 downto 21)) or
-    --                           	(num_regRt = Instruction_ID(20 downto 16))) 
-    -- 						else '0';
-    
-
-            
-    hazard_process: process(hazard_efective, Clk)
-    begin
-        if hazard_efective = '1' then
-            enable_IF_ID <= '0';
-            PCWrite <= '1';
-            Ctrl_Branch_EX <= '0';
-            Ctrl_MemWrite_EX <= '0';
-            Ctrl_MemRead_EX <= '0';
-            Ctrl_ALUSrc_EX <= '0';
-            Ctrl_RegDest_EX <= '0';
-            Ctrl_MemToReg_EX <= '0';
-            Ctrl_RegWrite_EX <= '0';
-            Ctrl_ALUOp_EX <= (others =>'0');
-        else
-            enable_IF_ID <= '1';
-            PCWrite <= '0';  
-        end if;
-    end process;
+  hazard_effective <= '0' when Ctrl_MemRead_EX = '1' and
+    (num_regRt = Instruction_ID(25 downto 21) or
+    num_regRt = Instruction_ID(20 downto 16)) else '1';
+  PCWrite  <= hazard_effective;
+  enable_IF_ID <= hazard_effective;
 
 
   ---------- PORT MAP ALU_CONTROL_I ----------
