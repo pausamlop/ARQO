@@ -239,6 +239,7 @@ begin
     
   elsif rising_edge(Clk) then
     if enable_ID_EX = '1' then
+      if hazard_effective 
       mux1 <= Instruction_ID(20 downto 16);
       mux2 <= Instruction_ID(15 downto 11);
       Inm_ext_EX <= Inm_ext_ID;
@@ -366,11 +367,11 @@ end process;
   
   --WARNING: igual se puede simplificar lo de abajo
   -- HAZARD UNIT
-  hazard_effective <= '0' when Ctrl_MemRead_EX = '1' and
+  hazard_effective <= '1' when Ctrl_MemRead_EX = '1' and
     (num_regRt = Instruction_ID(25 downto 21) or
-    num_regRt = Instruction_ID(20 downto 16)) else '1';
-  PCWrite  <= hazard_effective;
-  enable_IF_ID <= hazard_effective;
+    num_regRt = Instruction_ID(20 downto 16)) else '0';
+  PCWrite  <= not hazard_effective;
+  enable_IF_ID <= not hazard_effective;
 
 
   ---------- PORT MAP ALU_CONTROL_I ----------

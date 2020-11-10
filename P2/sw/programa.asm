@@ -58,5 +58,26 @@ main:
 	add $t1, $t2, $t3 	# r9 = 8 + 4 = 12
 	sub $t1, $t5, $t6		# r9 = 34 - 16 = 18
 	add $t5, $t1, $t2		# r9 = 18 + 8 = 26					NO ES 12 + 8 = 20
+ 
+	# instruccion 0X80
+  # utiliza un registro actualizado 3 ciclos antes
+  add $t2, $t6, $t4   # r10 = 16 + 50 = 66
+  sub $t4, $t3, $t3   # r12 = 0
+  add $t6, $t1, $t1   # r14 = 18 + 18 = 36
+  sub $t3, $t2, $t2   # r11 = 0
 
-	# instruccion numero 0X84
+	# instruccion numero 0X # lw
+	lw $t1, 36($zero)			# r9 = 8
+	add $t3, $t1, $t1			#	r11 = 8 + 8 = 16, 				NO ES 18 + 18 = 36, ni 8 + 18 = 26
+
+	lw $t2, 24($zero)			# r10 = 1
+	add $t3, $t4, $t5			# r11 = 0 + 26
+	and $t4, $t2, $t2			# r12 = 1
+	
+  lw $t6, 32($zero)     # r14 = 4
+  addi $t1, $t2, 1      # r9 = 1 + 1 = 2
+  xor $t3, $t2, $t2     # r11 = 0
+  add $t3, $t6, $t2     # r11 = 4 + 1 = 5
+
+
+
