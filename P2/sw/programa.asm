@@ -57,7 +57,7 @@ main:
 	# utiliza un registro que se actualiza por dos instrucciones distintas
 	add $t1, $t2, $t3 	# r9 = 8 + 4 = 12
 	sub $t1, $t5, $t6		# r9 = 34 - 16 = 18
-	add $t5, $t1, $t2		# r9 = 18 + 8 = 26					NO ES 12 + 8 = 20
+	add $t5, $t1, $t2		# r13 = 18 + 8 = 26					NO ES 12 + 8 = 20
  
 	# instruccion 0X80
   # utiliza un registro actualizado 3 ciclos antes
@@ -66,7 +66,7 @@ main:
   add $t6, $t1, $t1   # r14 = 18 + 18 = 36
   sub $t3, $t2, $t2   # r11 = 0
 
-	# instruccion numero 0X # lw
+	# instruccion numero 0X94 # lw
 	lw $t1, 36($zero)			# r9 = 8
 	add $t3, $t1, $t1			#	r11 = 8 + 8 = 16, 				NO ES 18 + 18 = 36, ni 8 + 18 = 26
 

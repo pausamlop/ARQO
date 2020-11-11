@@ -239,7 +239,28 @@ begin
     
   elsif rising_edge(Clk) then
     if enable_ID_EX = '1' then
-      if hazard_effective 
+
+      if hazard_effective = '1' then
+        Ctrl_Branch_EX <= '0';
+        Ctrl_MemWrite_EX <= '0';
+        Ctrl_MemRead_EX <= '0';
+        Ctrl_ALUSrc_EX <= '0';
+        Ctrl_RegDest_EX <= '0';
+        Ctrl_MemToReg_EX <= '0'; 
+        Ctrl_RegWrite_EX <= '0';
+        Ctrl_ALUOp_EX <= (others =>'0');
+      else
+        -- Unidad de Control
+        Ctrl_Branch_EX <= Ctrl_Branch_ID;
+        Ctrl_MemWrite_EX <= Ctrl_MemWrite_ID;
+        Ctrl_MemRead_EX <= Ctrl_MemRead_ID;
+        Ctrl_ALUSrc_EX <= Ctrl_ALUSrc_ID;
+        Ctrl_RegDest_EX <= Ctrl_RegDest_ID;
+        Ctrl_MemToReg_EX <= Ctrl_MemToReg_ID; 
+        Ctrl_RegWrite_EX <= Ctrl_RegWrite_ID;
+        Ctrl_ALUOp_EX <= Ctrl_ALUOp_ID;
+      end if;
+
       mux1 <= Instruction_ID(20 downto 16);
       mux2 <= Instruction_ID(15 downto 11);
       Inm_ext_EX <= Inm_ext_ID;
@@ -249,15 +270,6 @@ begin
       num_regRs <= Instruction_ID(25 downto 21);
       num_regRt <= Instruction_ID(20 downto 16);
 
-      -- Unidad de Control
-      Ctrl_Branch_EX <= Ctrl_Branch_ID;
-      Ctrl_MemWrite_EX <= Ctrl_MemWrite_ID;
-      Ctrl_MemRead_EX <= Ctrl_MemRead_ID;
-      Ctrl_ALUSrc_EX <= Ctrl_ALUSrc_ID;
-      Ctrl_RegDest_EX <= Ctrl_RegDest_ID;
-      Ctrl_MemToReg_EX <= Ctrl_MemToReg_ID; 
-      Ctrl_RegWrite_EX <= Ctrl_RegWrite_ID;
-      Ctrl_ALUOp_EX <= Ctrl_ALUOp_ID;
     end if;
 
   end if;
