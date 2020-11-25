@@ -3,9 +3,9 @@
 #!/bin/bash
 
 # inicializar variables
-Ninicio=100
-Npaso=16
-Nfinal=$((Ninicio + 100))
+Ninicio=$((10000 + 1024 * 9))
+Npaso=64
+Nfinal=$((Ninicio + 1024))
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 
@@ -17,8 +17,8 @@ touch $fDAT
 
 echo "Running slow and fast..."
 # bucle para N desde P hasta Q 
-#for N in $(seq $Ninicio $Npaso $Nfinal);
-for ((N = Ninicio ; N <= Nfinal ; N += Npaso)); do
+
+for N in $(seq $Ninicio $Npaso $Nfinal);do
 	echo "N: $N / $Nfinal..."
 	
 	# ejecutar los programas slow y fast consecutivamente con tamaño de matriz N
