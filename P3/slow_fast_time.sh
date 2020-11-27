@@ -9,43 +9,57 @@ Nfinal=$((Ninicio + 1024))
 Niter=30
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
-fAUX=aux_slow_fast_time.dat
+fAUXSLOW=aux_slow_time.dat
+fAUXFAST=aux_fast_time.dat
 
 # borrar el fichero DAT y el fichero PNG
 rm -f $fDAT fPNG
-rm -f $fAUX
+rm -f $fAUXSLOW
+rm -f $fAUXFAST
 
 # generar el fichero DAT vacío
 touch $fDAT
-touch $fAUX
+touch $fAUXSLOW
+touch $fAXFAST
 
 echo "Running slow and fast..."
 # bucle para N desde P hasta Q 
 
 for i in $(seq 1 $Niter);do
 	for N in $(seq $Ninicio $Npaso $Nfinal);do
-		echo "N: $N / $Nfinal..."
+		echo "N(slow): $N / $Nfinal..."
 		slowTime=$(./slow $N | grep 'time' | awk '{print $3}')
+
+		echo "$N	$slowTime" >> $fAUXSLOW
+	done
+
+	for N in $(seq $Ninicio $Npaso $Nfinal);do
+		echo "N(fast): $N / $Nfinal..."
 		fastTime=$(./fast $N | grep 'time' | awk '{print $3}')
 
-		echo "$N	$slowTime	$fastTime" >> $fAUX
+		echo "$N	$fastTime" >> $fAUXFAST
 	done
 done
 
 echo "Creado el archivo auxiliar:" #debug
 
-sort  $fAUX #debug
+sort  $fAUXSLOW #debug
+
+echo "fast:" #debug
+
+sort $fAUXFAST # debug
 
 echo "Haciendo las medias..." #debug
 
 # ahora hay que calcular las medias
 
 for N in $(seq $Ninicio $Npaso $Nfinal);do
-	slowTime_mean=$(cat $fAUX | grep $N | awk '{print $2}' | paste -sd+ |bc)
+	slowTime_mean=$(cat $fAUXSLOW | grep $N | awk '{print $2}' | paste -sd+ |bc)
 	echo "Suma de las slow: $slowTime_mean" #debug
 	slowTime_mean=$(echo "$slowTime_mean / $Niter"|bc -l)
 
-	fastTime_mean=$(cat $fAUX | grep $N | awk '{print $3}' | paste -sd+ |bc)
+	fastTime_mean=$(cat $fAUXFAST | grep $N | awk '{print $2}' | paste -sd+ |bc)
+	echo "Suma de las fast: $fastTime_mean" #debug
 	fastTime_mean=$(echo "$fastTime_mean / $Niter"|bc -l)
 
 	echo "Media de $N: $slowTime_mean	$fastTime_mean" #debug
