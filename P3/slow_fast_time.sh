@@ -3,10 +3,10 @@
 #!/bin/bash
 
 # inicializar variables
-Ninicio=$((1024 * 2))
+Ninicio=$((10000 + 1024 * 9))
 Npaso=64
 Nfinal=$((Ninicio + 1024))
-Niter=30
+Niter=20
 fDAT=slow_fast_time.dat
 fPNG=slow_fast_time.png
 fAUXSLOW=aux_slow_time.dat
@@ -20,7 +20,7 @@ rm -f $fAUXFAST
 # generar el fichero DAT vacío
 touch $fDAT
 touch $fAUXSLOW
-touch $fAXFAST
+touch $fAUXFAST
 
 echo "Running slow and fast..."
 # bucle para N desde P hasta Q 
@@ -71,18 +71,10 @@ echo "Creado el archivo definitivo" #debug
 
 cat $fDAT #debug
 
-# for N in $(seq $Ninicio $Npaso $Nfinal);do
-# 	echo "N: $N / $Nfinal..."
-	
-# 	# ejecutar los programas slow y fast consecutivamente con tamaño de matriz N
-# 	# para cada uno, filtrar la línea que contiene el tiempo y seleccionar la
-# 	# tercera columna (el valor del tiempo). Dejar los valores en variables
-# 	# para poder imprimirlos en la misma línea del fichero de datos
-# 	slowTime=$(./slow $N | grep 'time' | awk '{print $3}')
-# 	fastTime=$(./fast $N | grep 'time' | awk '{print $3}')
+# borramos los archivos auxiliares
 
-# 	echo "$N	$slowTime	$fastTime" >> $fDAT
-# done
+rm -f $fAUXSLOW
+rm -f $fAUXFAST
 
 echo "Generating plot..."
 # llamar a gnuplot para generar el gráfico y pasarle directamente por la entrada
