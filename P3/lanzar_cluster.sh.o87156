@@ -1,0 +1,139 @@
+Ejecutando script ejercicio3.sh…
+
+N(normal): 100 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 132 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 164 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 196 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 228 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 260 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 292 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 324 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 356 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(normal): 388 / 400...
+ejercicio3.sh: line 34: ./mult: No such file or directory
+N(trasp): 100 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 132 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 164 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 196 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 228 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 260 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 292 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 324 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 356 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+N(trasp): 388 / 400...
+ejercicio3.sh: line 41: ./mult_transpuesta: No such file or directory
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 100: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 132: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 164: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 196: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 228: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 260: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 292: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 324: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 356: 	
+Suma de las normal: 
+(standard_in) 1: syntax error
+Suma de las trasp: 
+(standard_in) 1: syntax error
+Media de 388: 	
+N: 100 / 400...
+valgrind: ./mult: No such file or directory
+N: 132 / 400...
+valgrind: ./mult: No such file or directory
+N: 164 / 400...
+valgrind: ./mult: No such file or directory
+N: 196 / 400...
+valgrind: ./mult: No such file or directory
+N: 228 / 400...
+valgrind: ./mult: No such file or directory
+N: 260 / 400...
+valgrind: ./mult: No such file or directory
+N: 292 / 400...
+valgrind: ./mult: No such file or directory
+N: 324 / 400...
+valgrind: ./mult: No such file or directory
+N: 356 / 400...
+valgrind: ./mult: No such file or directory
+N: 388 / 400...
+valgrind: ./mult: No such file or directory
+N: 100 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 132 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 164 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 196 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 228 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 260 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 292 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 324 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 356 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+N: 388 / 400...
+valgrind: ./mult_transpuesta: No such file or directory
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Could not find/open font when opening font "arial", using internal non-scalable font
+         line 0: warning: Skipping data file with no valid points
+         line 0: warning: Skipping data file with no valid points
+         line 0: warning: Skipping data file with no valid points
+         line 0: warning: Skipping data file with no valid points

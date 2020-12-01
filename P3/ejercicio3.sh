@@ -4,10 +4,10 @@
 #!/bin/bash
 
 # inicializar variables
-Ninicio=$((256+256*9))
-Nfinal=$((256+256*10))
-Npaso=32
-Niter=20
+Ninicio=$((256+256*9))  # tiene que ser 256+256*9
+Nfinal=$((256+256*10))  # tiene que ser 256+256*10
+Npaso=32                
+Niter=20                 # tiene que ser 20
 fDAT=mult.dat
 fPNGC=mult_cache.png
 fPNGT=mult_time.png
@@ -108,6 +108,9 @@ for N in $(seq $Ninicio $Npaso $Nfinal);do
     echo "$N    $TNormal    $D1mrNormal    $D1mwNormal    $TTrasp    $D1mr    $D1mw" >> $fDAT
 
 done
+
+rm -f $fAUXNORMAL
+rm -f $fAUXTRASP
 
 # GNUPLOT
 echo "Generating plot..."
