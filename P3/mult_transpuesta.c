@@ -56,7 +56,7 @@ void compute(tipo **matrixA, tipo **matrixB, tipo **mult, int n){
     // transponemos la matriz b:
 
     for(i = 0; i < n; i++){
-        for(j = 0; j < i; j++){
+        for(j = i; j < n; j++){
             aux = matrixB[i][j];
             matrixB[i][j] = matrixB[j][i];
             matrixB[j][i] = aux;
