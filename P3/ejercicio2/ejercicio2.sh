@@ -4,8 +4,8 @@
 #!/bin/bash
 
 # inicializar variables
-Ninicio=500 #6608 #deberia ser 6608
-Nfinal=1000 #7120 #deberia ser 7120
+Ninicio=6608 #deberia ser 6608
+Nfinal=7120 #deberia ser 7120
 Npaso=64
 fPNR=cache_lectura.png
 fPNW=cache_escritura.png
