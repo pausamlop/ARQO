@@ -1,6 +1,6 @@
 LIBS = 
 LIB_DIR =  
-FLAGS = -g -Wall -D_GNU_SOURCE
+FLAGS = -g -O3 -Wall -D_GNU_SOURCE
 
 .PHONY: clean all
 
