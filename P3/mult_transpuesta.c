@@ -67,7 +67,7 @@ void compute(tipo **matrixA, tipo **matrixB, tipo **mult, int n){
         for(j = 0; j < n; j++){
             mult[i][j] = 0;
             for(k = 0; k < n; k++){
-                mult[i][j] += matrixA[i][k] * matrixB[k][j];
+                mult[i][j] += matrixA[i][k] * matrixB[j][k];
             }
         }
     }

@@ -1,4 +1,4 @@
-# Script para el ejercicio 3, para P3 arq 2020-2021
+# Script para el ejercicio 4, para P3 arq 2020-2021
 # Autores: Pablo Izaguirre y Paula Samper
 
 #!/bin/bash
