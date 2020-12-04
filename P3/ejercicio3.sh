@@ -142,7 +142,7 @@ set output "mult_cache.png"
 plot "mult.dat" using 1:3 with lines lw 2 title "read normal", \
      "mult.dat" using 1:4 with lines lw 2 title "write normal", \
      "mult.dat" using 1:6 with lines lw 2 title "read Trasp", \
-     "mult.dat" using 1:7 with lines lw 2 title "write Normal"
+     "mult.dat" using 1:7 with lines lw 2 title "write Trasp"
 replot
 quit
 END_GNUPLOT
