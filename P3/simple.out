@@ -1,0 +1,953 @@
+Ejecutando script ejercicio3_time.sh…
+
+N(normal): 256 / 512...
+N(normal): 288 / 512...
+N(normal): 320 / 512...
+N(normal): 352 / 512...
+N(normal): 384 / 512...
+N(normal): 416 / 512...
+N(normal): 448 / 512...
+N(normal): 480 / 512...
+N(normal): 512 / 512...
+N(trasp): 256 / 512...
+N(trasp): 288 / 512...
+N(trasp): 320 / 512...
+N(trasp): 352 / 512...
+N(trasp): 384 / 512...
+N(trasp): 416 / 512...
+N(trasp): 448 / 512...
+N(trasp): 480 / 512...
+N(trasp): 512 / 512...
+Suma de las normal: .131056
+Suma de las trasp: .024858
+Media de 256: .13105600000000000000	.02485800000000000000
+Suma de las normal: .062700
+Suma de las trasp: .029285
+Media de 288: .06270000000000000000	.02928500000000000000
+Suma de las normal: .084291
+Suma de las trasp: .041379
+Media de 320: .08429100000000000000	.04137900000000000000
+Suma de las normal: .112535
+Suma de las trasp: .052939
+Media de 352: .11253500000000000000	.05293900000000000000
+Suma de las normal: .210715
+Suma de las trasp: .068177
+Media de 384: .21071500000000000000	.06817700000000000000
+Suma de las normal: .267784
+Suma de las trasp: .087348
+Media de 416: .26778400000000000000	.08734800000000000000
+Suma de las normal: .350636
+Suma de las trasp: .109340
+Media de 448: .35063600000000000000	.10934000000000000000
+Suma de las normal: .464310
+Suma de las trasp: .132130
+Media de 480: .46431000000000000000	.13213000000000000000
+Suma de las normal: 1.771679
+Suma de las trasp: .160150
+Media de 512: 1.77167900000000000000	.16015000000000000000
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+ejercicio3_time.sh: line 83: END_GNUPLOT: command not found
+Ejecutando script ejercicio3_time.sh…
+
+N(normal): 2560 / 2816...
+N(normal): 2592 / 2816...
+N(normal): 2624 / 2816...
+N(normal): 2656 / 2816...
+N(normal): 2688 / 2816...
+N(normal): 2720 / 2816...
+N(normal): 2752 / 2816...
+N(normal): 2784 / 2816...
+N(normal): 2816 / 2816...
+N(trasp): 2560 / 2816...
+N(trasp): 2592 / 2816...
+N(trasp): 2624 / 2816...
+N(trasp): 2656 / 2816...
+N(trasp): 2688 / 2816...
+N(trasp): 2720 / 2816...
+N(trasp): 2752 / 2816...
+N(trasp): 2784 / 2816...
+N(trasp): 2816 / 2816...
+N(normal): 2560 / 2816...
+N(normal): 2592 / 2816...
+N(normal): 2624 / 2816...
+N(normal): 2656 / 2816...
+N(normal): 2688 / 2816...
+N(normal): 2720 / 2816...
+N(normal): 2752 / 2816...
+N(normal): 2784 / 2816...
+N(normal): 2816 / 2816...
+N(trasp): 2560 / 2816...
+N(trasp): 2592 / 2816...
+N(trasp): 2624 / 2816...
+N(trasp): 2656 / 2816...
+N(trasp): 2688 / 2816...
+N(trasp): 2720 / 2816...
+N(trasp): 2752 / 2816...
+N(trasp): 2784 / 2816...
+N(trasp): 2816 / 2816...
+N(normal): 2560 / 2816...
+N(normal): 2592 / 2816...
+N(normal): 2624 / 2816...
+N(normal): 2656 / 2816...
+N(normal): 2688 / 2816...
+N(normal): 2720 / 2816...
+N(normal): 2752 / 2816...
+N(normal): 2784 / 2816...
+N(normal): 2816 / 2816...
+N(trasp): 2560 / 2816...
+N(trasp): 2592 / 2816...
+N(trasp): 2624 / 2816...
+N(trasp): 2656 / 2816...
+N(trasp): 2688 / 2816...
+N(trasp): 2720 / 2816...
+N(trasp): 2752 / 2816...
+N(trasp): 2784 / 2816...
+N(trasp): 2816 / 2816...
+N(normal): 2560 / 2816...
+N(normal): 2592 / 2816...
+N(normal): 2624 / 2816...
+N(normal): 2656 / 2816...
+N(normal): 2688 / 2816...
+N(normal): 2720 / 2816...
+N(normal): 2752 / 2816...
+N(normal): 2784 / 2816...
+N(normal): 2816 / 2816...
+N(trasp): 2560 / 2816...
+N(trasp): 2592 / 2816...
+N(trasp): 2624 / 2816...
+N(trasp): 2656 / 2816...
+N(trasp): 2688 / 2816...
+N(trasp): 2720 / 2816...
+N(trasp): 2752 / 2816...
+N(trasp): 2784 / 2816...
+N(trasp): 2816 / 2816...
+Suma de las normal: 1638.535451
+Suma de las trasp: 103.016525
+Media de 2560: 409.63386275000000000000	25.75413125000000000000
+Suma de las normal: 322.018095
+Suma de las trasp: 110.828152
+Media de 2592: 80.50452375000000000000	27.70703800000000000000
+Suma de las normal: 349.977053
+Suma de las trasp: 115.797217
+Media de 2624: 87.49426325000000000000	28.94930425000000000000
+Suma de las normal: 356.080234
+Suma de las trasp: 120.158990
+Media de 2656: 89.02005850000000000000	30.03974750000000000000
+Suma de las normal: 414.425696
+Suma de las trasp: 123.969176
+Media de 2688: 103.60642400000000000000	30.99229400000000000000
+Suma de las normal: 364.615428
+Suma de las trasp: 116.769970
+Media de 2720: 91.15385700000000000000	29.19249250000000000000
+Suma de las normal: 390.175478
+Suma de las trasp: 134.824435
+Media de 2752: 97.54386950000000000000	33.70610875000000000000
+Suma de las normal: 396.492292
+Suma de las trasp: 137.900163
+Media de 2784: 99.12307300000000000000	34.47504075000000000000
+Suma de las normal: 965.260598
+Suma de las trasp: 136.846164
+Media de 2816: 241.31514950000000000000	34.21154100000000000000
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+ejercicio3_time.sh: line 83: END_GNUPLOT: command not found
+Ejecutando script ejercicio4_vias.sh…
+
+Vias: 1 / 16...
+==9414== Cachegrind, a cache and branch-prediction profiler
+==9414== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9414== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9414== Command: ./mult_transpuesta 256*4
+==9414== 
+--9414-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 0.852790
+==9414== 
+==9414== I   refs:      126,153,905
+==9414== I1  misses:        264,603
+==9414== LLi misses:          1,004
+==9414== I1  miss rate:        0.21%
+==9414== LLi miss rate:        0.00%
+==9414== 
+==9414== D   refs:       54,361,486  (36,323,150 rd   + 18,038,336 wr)
+==9414== D1  misses:      2,178,743  ( 2,153,718 rd   +     25,025 wr)
+==9414== LLd misses:         26,427  (     1,493 rd   +     24,934 wr)
+==9414== D1  miss rate:         4.0% (       5.9%     +        0.1%  )
+==9414== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==9414== 
+==9414== LL refs:         2,443,346  ( 2,418,321 rd   +     25,025 wr)
+==9414== LL misses:          27,431  (     2,497 rd   +     24,934 wr)
+==9414== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 2 / 16...
+==9428== Cachegrind, a cache and branch-prediction profiler
+==9428== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9428== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9428== Command: ./mult_transpuesta 256*4
+==9428== 
+--9428-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 0.873044
+==9428== 
+==9428== I   refs:      126,153,905
+==9428== I1  misses:          2,567
+==9428== LLi misses:          1,004
+==9428== I1  miss rate:        0.00%
+==9428== LLi miss rate:        0.00%
+==9428== 
+==9428== D   refs:       54,361,486  (36,323,150 rd   + 18,038,336 wr)
+==9428== D1  misses:      2,178,743  ( 2,153,718 rd   +     25,025 wr)
+==9428== LLd misses:         26,427  (     1,493 rd   +     24,934 wr)
+==9428== D1  miss rate:         4.0% (       5.9%     +        0.1%  )
+==9428== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==9428== 
+==9428== LL refs:         2,181,310  ( 2,156,285 rd   +     25,025 wr)
+==9428== LL misses:          27,431  (     2,497 rd   +     24,934 wr)
+==9428== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 4 / 16...
+==9441== Cachegrind, a cache and branch-prediction profiler
+==9441== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9441== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9441== Command: ./mult_transpuesta 256*4
+==9441== 
+--9441-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 0.858239
+==9441== 
+==9441== I   refs:      126,153,926
+==9441== I1  misses:          1,754
+==9441== LLi misses:          1,005
+==9441== I1  miss rate:        0.00%
+==9441== LLi miss rate:        0.00%
+==9441== 
+==9441== D   refs:       54,361,491  (36,323,154 rd   + 18,038,337 wr)
+==9441== D1  misses:      2,178,743  ( 2,153,718 rd   +     25,025 wr)
+==9441== LLd misses:         26,427  (     1,493 rd   +     24,934 wr)
+==9441== D1  miss rate:         4.0% (       5.9%     +        0.1%  )
+==9441== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==9441== 
+==9441== LL refs:         2,180,497  ( 2,155,472 rd   +     25,025 wr)
+==9441== LL misses:          27,432  (     2,498 rd   +     24,934 wr)
+==9441== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 8 / 16...
+==9454== Cachegrind, a cache and branch-prediction profiler
+==9454== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9454== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9454== Command: ./mult_transpuesta 256*4
+==9454== 
+--9454-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 0.860164
+==9454== 
+==9454== I   refs:      126,153,905
+==9454== I1  misses:          1,714
+==9454== LLi misses:          1,004
+==9454== I1  miss rate:        0.00%
+==9454== LLi miss rate:        0.00%
+==9454== 
+==9454== D   refs:       54,361,486  (36,323,150 rd   + 18,038,336 wr)
+==9454== D1  misses:      2,178,743  ( 2,153,718 rd   +     25,025 wr)
+==9454== LLd misses:         26,427  (     1,493 rd   +     24,934 wr)
+==9454== D1  miss rate:         4.0% (       5.9%     +        0.1%  )
+==9454== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==9454== 
+==9454== LL refs:         2,180,457  ( 2,155,432 rd   +     25,025 wr)
+==9454== LL misses:          27,431  (     2,497 rd   +     24,934 wr)
+==9454== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 16 / 16...
+==9467== Cachegrind, a cache and branch-prediction profiler
+==9467== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9467== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9467== Command: ./mult_transpuesta 256*4
+==9467== 
+--9467-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 0.850057
+==9467== 
+==9467== I   refs:      126,153,930
+==9467== I1  misses:          1,707
+==9467== LLi misses:          1,005
+==9467== I1  miss rate:        0.00%
+==9467== LLi miss rate:        0.00%
+==9467== 
+==9467== D   refs:       54,361,491  (36,323,154 rd   + 18,038,337 wr)
+==9467== D1  misses:      2,178,743  ( 2,153,718 rd   +     25,025 wr)
+==9467== LLd misses:         26,427  (     1,493 rd   +     24,934 wr)
+==9467== D1  miss rate:         4.0% (       5.9%     +        0.1%  )
+==9467== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==9467== 
+==9467== LL refs:         2,180,450  ( 2,155,425 rd   +     25,025 wr)
+==9467== LL misses:          27,432  (     2,498 rd   +     24,934 wr)
+==9467== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio4_vias.sh…
+
+Vias: 1 / 16...
+==9676== Cachegrind, a cache and branch-prediction profiler
+==9676== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9676== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9676== Command: ./mult_transpuesta 1024
+==9676== 
+--9676-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 61.591500
+==9676== 
+==9676== I   refs:      7,652,673,375
+==9676== I1  misses:        4,196,789
+==9676== LLi misses:            1,212
+==9676== I1  miss rate:          0.05%
+==9676== LLi miss rate:          0.00%
+==9676== 
+==9676== D   refs:      3,284,738,082  (2,191,056,073 rd   + 1,093,682,009 wr)
+==9676== D1  misses:      135,471,773  (  135,077,817 rd   +       393,956 wr)
+==9676== LLd misses:        5,922,818  (    5,528,897 rd   +       393,921 wr)
+==9676== D1  miss rate:           4.1% (          6.2%     +           0.0%  )
+==9676== LLd miss rate:           0.2% (          0.3%     +           0.0%  )
+==9676== 
+==9676== LL refs:         139,668,562  (  139,274,606 rd   +       393,956 wr)
+==9676== LL misses:         5,924,030  (    5,530,109 rd   +       393,921 wr)
+==9676== LL miss rate:            0.1% (          0.1%     +           0.0%  )
+Vias: 2 / 16...
+==9727== Cachegrind, a cache and branch-prediction profiler
+==9727== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9727== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9727== Command: ./mult_transpuesta 1024
+==9727== 
+--9727-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 63.371380
+==9727== 
+==9727== I   refs:      7,652,673,398
+==9727== I1  misses:            2,588
+==9727== LLi misses:            1,220
+==9727== I1  miss rate:          0.00%
+==9727== LLi miss rate:          0.00%
+==9727== 
+==9727== D   refs:      3,284,738,093  (2,191,056,079 rd   + 1,093,682,014 wr)
+==9727== D1  misses:      135,471,773  (  135,077,817 rd   +       393,956 wr)
+==9727== LLd misses:        5,922,866  (    5,528,945 rd   +       393,921 wr)
+==9727== D1  miss rate:           4.1% (          6.2%     +           0.0%  )
+==9727== LLd miss rate:           0.2% (          0.3%     +           0.0%  )
+==9727== 
+==9727== LL refs:         135,474,361  (  135,080,405 rd   +       393,956 wr)
+==9727== LL misses:         5,924,086  (    5,530,165 rd   +       393,921 wr)
+==9727== LL miss rate:            0.1% (          0.1%     +           0.0%  )
+Vias: 4 / 16...
+==9776== Cachegrind, a cache and branch-prediction profiler
+==9776== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9776== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9776== Command: ./mult_transpuesta 1024
+==9776== 
+--9776-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 62.234474
+==9776== 
+==9776== I   refs:      7,652,673,463
+==9776== I1  misses:            1,770
+==9776== LLi misses:            1,217
+==9776== I1  miss rate:          0.00%
+==9776== LLi miss rate:          0.00%
+==9776== 
+==9776== D   refs:      3,284,738,119  (2,191,056,094 rd   + 1,093,682,025 wr)
+==9776== D1  misses:      135,471,773  (  135,077,817 rd   +       393,956 wr)
+==9776== LLd misses:        5,922,802  (    5,528,881 rd   +       393,921 wr)
+==9776== D1  miss rate:           4.1% (          6.2%     +           0.0%  )
+==9776== LLd miss rate:           0.2% (          0.3%     +           0.0%  )
+==9776== 
+==9776== LL refs:         135,473,543  (  135,079,587 rd   +       393,956 wr)
+==9776== LL misses:         5,924,019  (    5,530,098 rd   +       393,921 wr)
+==9776== LL miss rate:            0.1% (          0.1%     +           0.0%  )
+Vias: 8 / 16...
+==9823== Cachegrind, a cache and branch-prediction profiler
+==9823== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9823== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9823== Command: ./mult_transpuesta 1024
+==9823== 
+--9823-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 61.691893
+==9823== 
+==9823== I   refs:      7,652,673,421
+==9823== I1  misses:            1,733
+==9823== LLi misses:            1,213
+==9823== I1  miss rate:          0.00%
+==9823== LLi miss rate:          0.00%
+==9823== 
+==9823== D   refs:      3,284,738,104  (2,191,056,085 rd   + 1,093,682,019 wr)
+==9823== D1  misses:      135,471,773  (  135,077,817 rd   +       393,956 wr)
+==9823== LLd misses:        5,922,706  (    5,528,785 rd   +       393,921 wr)
+==9823== D1  miss rate:           4.1% (          6.2%     +           0.0%  )
+==9823== LLd miss rate:           0.2% (          0.3%     +           0.0%  )
+==9823== 
+==9823== LL refs:         135,473,506  (  135,079,550 rd   +       393,956 wr)
+==9823== LL misses:         5,923,919  (    5,529,998 rd   +       393,921 wr)
+==9823== LL miss rate:            0.1% (          0.1%     +           0.0%  )
+Vias: 16 / 16...
+==9870== Cachegrind, a cache and branch-prediction profiler
+==9870== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==9870== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==9870== Command: ./mult_transpuesta 1024
+==9870== 
+--9870-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 61.961216
+==9870== 
+==9870== I   refs:      7,652,673,410
+==9870== I1  misses:            1,725
+==9870== LLi misses:            1,214
+==9870== I1  miss rate:          0.00%
+==9870== LLi miss rate:          0.00%
+==9870== 
+==9870== D   refs:      3,284,738,099  (2,191,056,082 rd   + 1,093,682,017 wr)
+==9870== D1  misses:      135,471,773  (  135,077,817 rd   +       393,956 wr)
+==9870== LLd misses:        5,922,706  (    5,528,785 rd   +       393,921 wr)
+==9870== D1  miss rate:           4.1% (          6.2%     +           0.0%  )
+==9870== LLd miss rate:           0.2% (          0.3%     +           0.0%  )
+==9870== 
+==9870== LL refs:         135,473,498  (  135,079,542 rd   +       393,956 wr)
+==9870== LL misses:         5,923,920  (    5,529,999 rd   +       393,921 wr)
+==9870== LL miss rate:            0.1% (          0.1%     +           0.0%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio4_vias.sh…
+
+Vias: 1 / 16...
+==20834== Cachegrind, a cache and branch-prediction profiler
+==20834== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20834== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20834== Command: ./mult_transpuesta 256*4
+==20834== 
+--20834-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.383716
+==20834== 
+==20834== I   refs:      126,151,104
+==20834== I1  misses:        264,579
+==20834== LLi misses:          1,055
+==20834== I1  miss rate:        0.21%
+==20834== LLi miss rate:        0.00%
+==20834== 
+==20834== D   refs:       54,360,605  (36,322,639 rd   + 18,037,966 wr)
+==20834== D1  misses:     18,955,043  (18,310,552 rd   +    644,491 wr)
+==20834== LLd misses:         26,689  (     1,744 rd   +     24,945 wr)
+==20834== D1  miss rate:        34.9% (      50.4%     +        3.6%  )
+==20834== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==20834== 
+==20834== LL refs:        19,219,622  (18,575,131 rd   +    644,491 wr)
+==20834== LL misses:          27,744  (     2,799 rd   +     24,945 wr)
+==20834== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 2 / 16...
+==20848== Cachegrind, a cache and branch-prediction profiler
+==20848== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20848== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20848== Command: ./mult_transpuesta 256*4
+==20848== 
+--20848-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.375274
+==20848== 
+==20848== I   refs:      126,151,081
+==20848== I1  misses:          2,539
+==20848== LLi misses:          1,051
+==20848== I1  miss rate:        0.00%
+==20848== LLi miss rate:        0.00%
+==20848== 
+==20848== D   refs:       54,360,600  (36,322,635 rd   + 18,037,965 wr)
+==20848== D1  misses:      4,030,578  ( 3,412,646 rd   +    617,932 wr)
+==20848== LLd misses:         26,667  (     1,729 rd   +     24,938 wr)
+==20848== D1  miss rate:         7.4% (       9.4%     +        3.4%  )
+==20848== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==20848== 
+==20848== LL refs:         4,033,117  ( 3,415,185 rd   +    617,932 wr)
+==20848== LL misses:          27,718  (     2,780 rd   +     24,938 wr)
+==20848== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 4 / 16...
+==20861== Cachegrind, a cache and branch-prediction profiler
+==20861== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20861== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20861== Command: ./mult_transpuesta 256*4
+==20861== 
+--20861-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.445691
+==20861== 
+==20861== I   refs:      126,151,081
+==20861== I1  misses:          1,729
+==20861== LLi misses:          1,051
+==20861== I1  miss rate:        0.00%
+==20861== LLi miss rate:        0.00%
+==20861== 
+==20861== D   refs:       54,360,600  (36,322,635 rd   + 18,037,965 wr)
+==20861== D1  misses:      2,787,968  ( 2,697,100 rd   +     90,868 wr)
+==20861== LLd misses:         26,655  (     1,717 rd   +     24,938 wr)
+==20861== D1  miss rate:         5.1% (       7.4%     +        0.5%  )
+==20861== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==20861== 
+==20861== LL refs:         2,789,697  ( 2,698,829 rd   +     90,868 wr)
+==20861== LL misses:          27,706  (     2,768 rd   +     24,938 wr)
+==20861== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 8 / 16...
+==20874== Cachegrind, a cache and branch-prediction profiler
+==20874== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20874== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20874== Command: ./mult_transpuesta 256*4
+==20874== 
+--20874-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.467319
+==20874== 
+==20874== I   refs:      126,151,081
+==20874== I1  misses:          1,689
+==20874== LLi misses:          1,050
+==20874== I1  miss rate:        0.00%
+==20874== LLi miss rate:        0.00%
+==20874== 
+==20874== D   refs:       54,360,600  (36,322,635 rd   + 18,037,965 wr)
+==20874== D1  misses:      3,161,543  ( 3,070,781 rd   +     90,762 wr)
+==20874== LLd misses:         26,652  (     1,715 rd   +     24,937 wr)
+==20874== D1  miss rate:         5.8% (       8.5%     +        0.5%  )
+==20874== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==20874== 
+==20874== LL refs:         3,163,232  ( 3,072,470 rd   +     90,762 wr)
+==20874== LL misses:          27,702  (     2,765 rd   +     24,937 wr)
+==20874== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 16 / 16...
+==20887== Cachegrind, a cache and branch-prediction profiler
+==20887== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==20887== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==20887== Command: ./mult_transpuesta 256*4
+==20887== 
+--20887-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.724406
+==20887== 
+==20887== I   refs:      126,151,083
+==20887== I1  misses:          1,683
+==20887== LLi misses:          1,050
+==20887== I1  miss rate:        0.00%
+==20887== LLi miss rate:        0.00%
+==20887== 
+==20887== D   refs:       54,360,600  (36,322,635 rd   + 18,037,965 wr)
+==20887== D1  misses:      3,774,209  ( 3,683,452 rd   +     90,757 wr)
+==20887== LLd misses:         26,646  (     1,709 rd   +     24,937 wr)
+==20887== D1  miss rate:         6.9% (      10.1%     +        0.5%  )
+==20887== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==20887== 
+==20887== LL refs:         3,775,892  ( 3,685,135 rd   +     90,757 wr)
+==20887== LL misses:          27,696  (     2,759 rd   +     24,937 wr)
+==20887== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio4_vias.sh…
+
+Vias: 1 / 16...
+==24221== Cachegrind, a cache and branch-prediction profiler
+==24221== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==24221== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24221== Command: ./mult_transpuesta 256*4
+==24221== 
+--24221-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.525685
+==24221== 
+==24221== I   refs:      126,151,056
+==24221== I1  misses:        264,579
+==24221== LLi misses:            997
+==24221== I1  miss rate:        0.21%
+==24221== LLi miss rate:        0.00%
+==24221== 
+==24221== D   refs:       54,360,589  (36,322,623 rd   + 18,037,966 wr)
+==24221== D1  misses:     19,205,958  (18,436,368 rd   +    769,590 wr)
+==24221== LLd misses:         26,625  (     1,676 rd   +     24,949 wr)
+==24221== D1  miss rate:        35.3% (      50.8%     +        4.3%  )
+==24221== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==24221== 
+==24221== LL refs:        19,470,537  (18,700,947 rd   +    769,590 wr)
+==24221== LL misses:          27,622  (     2,673 rd   +     24,949 wr)
+==24221== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 2 / 16...
+==24234== Cachegrind, a cache and branch-prediction profiler
+==24234== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==24234== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24234== Command: ./mult_transpuesta 256*4
+==24234== 
+--24234-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.479022
+==24234== 
+==24234== I   refs:      126,151,035
+==24234== I1  misses:          2,539
+==24234== LLi misses:            994
+==24234== I1  miss rate:        0.00%
+==24234== LLi miss rate:        0.00%
+==24234== 
+==24234== D   refs:       54,360,584  (36,322,619 rd   + 18,037,965 wr)
+==24234== D1  misses:      4,053,595  ( 3,424,297 rd   +    629,298 wr)
+==24234== LLd misses:         26,622  (     1,673 rd   +     24,949 wr)
+==24234== D1  miss rate:         7.5% (       9.4%     +        3.5%  )
+==24234== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==24234== 
+==24234== LL refs:         4,056,134  ( 3,426,836 rd   +    629,298 wr)
+==24234== LL misses:          27,616  (     2,667 rd   +     24,949 wr)
+==24234== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 4 / 16...
+==24247== Cachegrind, a cache and branch-prediction profiler
+==24247== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==24247== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24247== Command: ./mult_transpuesta 256*4
+==24247== 
+--24247-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.505364
+==24247== 
+==24247== I   refs:      126,151,058
+==24247== I1  misses:          1,731
+==24247== LLi misses:            996
+==24247== I1  miss rate:        0.00%
+==24247== LLi miss rate:        0.00%
+==24247== 
+==24247== D   refs:       54,360,589  (36,322,623 rd   + 18,037,966 wr)
+==24247== D1  misses:      2,790,741  ( 2,698,786 rd   +     91,955 wr)
+==24247== LLd misses:         26,602  (     1,661 rd   +     24,941 wr)
+==24247== D1  miss rate:         5.1% (       7.4%     +        0.5%  )
+==24247== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==24247== 
+==24247== LL refs:         2,792,472  ( 2,700,517 rd   +     91,955 wr)
+==24247== LL misses:          27,598  (     2,657 rd   +     24,941 wr)
+==24247== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 8 / 16...
+==24260== Cachegrind, a cache and branch-prediction profiler
+==24260== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==24260== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24260== Command: ./mult_transpuesta 256*4
+==24260== 
+--24260-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.559577
+==24260== 
+==24260== I   refs:      126,151,056
+==24260== I1  misses:          1,691
+==24260== LLi misses:            995
+==24260== I1  miss rate:        0.00%
+==24260== LLi miss rate:        0.00%
+==24260== 
+==24260== D   refs:       54,360,589  (36,322,623 rd   + 18,037,966 wr)
+==24260== D1  misses:      3,161,635  ( 3,070,772 rd   +     90,863 wr)
+==24260== LLd misses:         26,600  (     1,658 rd   +     24,942 wr)
+==24260== D1  miss rate:         5.8% (       8.5%     +        0.5%  )
+==24260== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==24260== 
+==24260== LL refs:         3,163,326  ( 3,072,463 rd   +     90,863 wr)
+==24260== LL misses:          27,595  (     2,653 rd   +     24,942 wr)
+==24260== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Vias: 16 / 16...
+==24273== Cachegrind, a cache and branch-prediction profiler
+==24273== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==24273== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==24273== Command: ./mult_transpuesta 256*4
+==24273== 
+--24273-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 1.768192
+==24273== 
+==24273== I   refs:      126,151,056
+==24273== I1  misses:          1,685
+==24273== LLi misses:            995
+==24273== I1  miss rate:        0.00%
+==24273== LLi miss rate:        0.00%
+==24273== 
+==24273== D   refs:       54,360,589  (36,322,623 rd   + 18,037,966 wr)
+==24273== D1  misses:      3,774,248  ( 3,683,466 rd   +     90,782 wr)
+==24273== LLd misses:         26,601  (     1,660 rd   +     24,941 wr)
+==24273== D1  miss rate:         6.9% (      10.1%     +        0.5%  )
+==24273== LLd miss rate:         0.0% (       0.0%     +        0.1%  )
+==24273== 
+==24273== LL refs:         3,775,933  ( 3,685,151 rd   +     90,782 wr)
+==24273== LL misses:          27,596  (     2,655 rd   +     24,941 wr)
+==24273== LL miss rate:          0.0% (       0.0%     +        0.1%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio4_vias.sh…
+
+Vias: 1 / 16...
+==10835== Cachegrind, a cache and branch-prediction profiler
+==10835== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==10835== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==10835== Command: ./mult_transpuesta 1024
+==10835== 
+--10835-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 56.638921
+==10835== 
+==10835== I   refs:      7,652,673,410
+==10835== I1  misses:        4,196,789
+==10835== LLi misses:            1,216
+==10835== I1  miss rate:          0.05%
+==10835== LLi miss rate:          0.00%
+==10835== 
+==10835== D   refs:      3,284,738,099  (2,191,056,082 rd   + 1,093,682,017 wr)
+==10835== D1  misses:    2,173,982,634  (2,152,603,821 rd   +    21,378,813 wr)
+==10835== LLd misses:        1,306,159  (      888,777 rd   +       417,382 wr)
+==10835== D1  miss rate:          66.2% (         98.2%     +           2.0%  )
+==10835== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==10835== 
+==10835== LL refs:       2,178,179,423  (2,156,800,610 rd   +    21,378,813 wr)
+==10835== LL misses:         1,307,375  (      889,993 rd   +       417,382 wr)
+==10835== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Vias: 2 / 16...
+==10884== Cachegrind, a cache and branch-prediction profiler
+==10884== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==10884== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==10884== Command: ./mult_transpuesta 1024
+==10884== 
+--10884-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 56.218254
+==10884== 
+==10884== I   refs:      7,652,673,421
+==10884== I1  misses:            2,587
+==10884== LLi misses:            1,219
+==10884== I1  miss rate:          0.00%
+==10884== LLi miss rate:          0.00%
+==10884== 
+==10884== D   refs:      3,284,738,104  (2,191,056,085 rd   + 1,093,682,019 wr)
+==10884== D1  misses:      365,346,515  (  330,126,720 rd   +    35,219,795 wr)
+==10884== LLd misses:        1,305,956  (      888,675 rd   +       417,281 wr)
+==10884== D1  miss rate:          11.1% (         15.1%     +           3.2%  )
+==10884== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==10884== 
+==10884== LL refs:         365,349,102  (  330,129,307 rd   +    35,219,795 wr)
+==10884== LL misses:         1,307,175  (      889,894 rd   +       417,281 wr)
+==10884== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Vias: 4 / 16...
+==10915== Cachegrind, a cache and branch-prediction profiler
+==10915== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==10915== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==10915== Command: ./mult_transpuesta 1024
+==10915== 
+--10915-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 56.151662
+==10915== 
+==10915== I   refs:      7,652,673,410
+==10915== I1  misses:            1,770
+==10915== LLi misses:            1,217
+==10915== I1  miss rate:          0.00%
+==10915== LLi miss rate:          0.00%
+==10915== 
+==10915== D   refs:      3,284,738,099  (2,191,056,082 rd   + 1,093,682,017 wr)
+==10915== D1  misses:      272,675,085  (  271,216,753 rd   +     1,458,332 wr)
+==10915== LLd misses:        1,264,524  (      868,549 rd   +       395,975 wr)
+==10915== D1  miss rate:           8.3% (         12.4%     +           0.1%  )
+==10915== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==10915== 
+==10915== LL refs:         272,676,855  (  271,218,523 rd   +     1,458,332 wr)
+==10915== LL misses:         1,265,741  (      869,766 rd   +       395,975 wr)
+==10915== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Vias: 8 / 16...
+==10960== Cachegrind, a cache and branch-prediction profiler
+==10960== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==10960== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==10960== Command: ./mult_transpuesta 1024
+==10960== 
+--10960-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 59.065211
+==10960== 
+==10960== I   refs:      7,652,673,428
+==10960== I1  misses:            1,735
+==10960== LLi misses:            1,215
+==10960== I1  miss rate:          0.00%
+==10960== LLi miss rate:          0.00%
+==10960== 
+==10960== D   refs:      3,284,738,102  (2,191,056,085 rd   + 1,093,682,017 wr)
+==10960== D1  misses:      272,635,753  (  271,192,913 rd   +     1,442,840 wr)
+==10960== LLd misses:        1,264,511  (      868,536 rd   +       395,975 wr)
+==10960== D1  miss rate:           8.3% (         12.4%     +           0.1%  )
+==10960== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==10960== 
+==10960== LL refs:         272,637,488  (  271,194,648 rd   +     1,442,840 wr)
+==10960== LL misses:         1,265,726  (      869,751 rd   +       395,975 wr)
+==10960== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Vias: 16 / 16...
+==11007== Cachegrind, a cache and branch-prediction profiler
+==11007== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==11007== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11007== Command: ./mult_transpuesta 1024
+==11007== 
+--11007-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 65.277638
+==11007== 
+==11007== I   refs:      7,652,673,520
+==11007== I1  misses:            1,725
+==11007== LLi misses:            1,214
+==11007== I1  miss rate:          0.00%
+==11007== LLi miss rate:          0.00%
+==11007== 
+==11007== D   refs:      3,284,738,140  (2,191,056,109 rd   + 1,093,682,031 wr)
+==11007== D1  misses:      272,636,502  (  271,193,746 rd   +     1,442,756 wr)
+==11007== LLd misses:        1,264,511  (      868,537 rd   +       395,974 wr)
+==11007== D1  miss rate:           8.3% (         12.4%     +           0.1%  )
+==11007== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==11007== 
+==11007== LL refs:         272,638,227  (  271,195,471 rd   +     1,442,756 wr)
+==11007== LL misses:         1,265,725  (      869,751 rd   +       395,974 wr)
+==11007== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio4_blocksize.sh…
+
+LineSize: 32 / 1024...
+==17713== Cachegrind, a cache and branch-prediction profiler
+==17713== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==17713== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==17713== Command: ./mult_transpuesta 1024
+==17713== 
+--17713-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 129.501541
+==17713== 
+==17713== I   refs:      7,652,670,950
+==17713== I1  misses:            3,716
+==17713== LLi misses:            1,213
+==17713== I1  miss rate:          0.00%
+==17713== LLi miss rate:          0.00%
+==17713== 
+==17713== D   refs:      3,284,737,337  (2,191,055,642 rd   + 1,093,681,695 wr)
+==17713== D1  misses:    2,161,026,714  (2,150,048,489 rd   +    10,978,225 wr)
+==17713== LLd misses:        1,288,685  (      880,060 rd   +       408,625 wr)
+==17713== D1  miss rate:          65.8% (         98.1%     +           1.0%  )
+==17713== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==17713== 
+==17713== LL refs:       2,161,030,430  (2,150,052,205 rd   +    10,978,225 wr)
+==17713== LL misses:         1,289,898  (      881,273 rd   +       408,625 wr)
+==17713== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+LineSize: 64 / 1024...
+==17777== Cachegrind, a cache and branch-prediction profiler
+==17777== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==17777== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==17777== Command: ./mult_transpuesta 1024
+==17777== 
+--17777-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 94.041266
+==17777== 
+==17777== I   refs:      7,652,670,809
+==17777== I1  misses:        4,196,776
+==17777== LLi misses:            1,212
+==17777== I1  miss rate:          0.05%
+==17777== LLi miss rate:          0.00%
+==17777== 
+==17777== D   refs:      3,284,737,270  (2,191,055,603 rd   + 1,093,681,667 wr)
+==17777== D1  misses:    2,173,982,597  (2,152,603,784 rd   +    21,378,813 wr)
+==17777== LLd misses:        1,306,218  (      888,834 rd   +       417,384 wr)
+==17777== D1  miss rate:          66.2% (         98.2%     +           2.0%  )
+==17777== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==17777== 
+==17777== LL refs:       2,178,179,373  (2,156,800,560 rd   +    21,378,813 wr)
+==17777== LL misses:         1,307,430  (      890,046 rd   +       417,384 wr)
+==17777== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+LineSize: 128 / 1024...
+==17827== Cachegrind, a cache and branch-prediction profiler
+==17827== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==17827== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==17827== Command: ./mult_transpuesta 1024
+==17827== 
+--17827-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 127.666291
+==17827== 
+==17827== I   refs:      7,652,670,956
+==17827== I1  misses:        4,196,270
+==17827== LLi misses:              810
+==17827== I1  miss rate:          0.05%
+==17827== LLi miss rate:          0.00%
+==17827== 
+==17827== D   refs:      3,284,737,342  (2,191,055,644 rd   + 1,093,681,698 wr)
+==17827== D1  misses:    2,191,719,600  (2,153,341,186 rd   +    38,378,414 wr)
+==17827== LLd misses:        1,256,720  (      936,689 rd   +       320,031 wr)
+==17827== D1  miss rate:          66.7% (         98.3%     +           3.5%  )
+==17827== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==17827== 
+==17827== LL refs:       2,195,915,870  (2,157,537,456 rd   +    38,378,414 wr)
+==17827== LL misses:         1,257,530  (      937,499 rd   +       320,031 wr)
+==17827== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+LineSize: 256 / 1024...
+==17906== Cachegrind, a cache and branch-prediction profiler
+==17906== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==17906== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==17906== Command: ./mult_transpuesta 1024
+==17906== 
+--17906-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 128.984384
+==17906== 
+==17906== I   refs:      7,652,670,973
+==17906== I1  misses:        8,390,044
+==17906== LLi misses:              591
+==17906== I1  miss rate:          0.11%
+==17906== LLi miss rate:          0.00%
+==17906== 
+==17906== D   refs:      3,284,737,348  (2,191,055,648 rd   + 1,093,681,700 wr)
+==17906== D1  misses:    2,226,974,518  (2,154,537,818 rd   +    72,436,700 wr)
+==17906== LLd misses:        1,253,018  (      939,776 rd   +       313,242 wr)
+==17906== D1  miss rate:          67.8% (         98.3%     +           6.6%  )
+==17906== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==17906== 
+==17906== LL refs:       2,235,364,562  (2,162,927,862 rd   +    72,436,700 wr)
+==17906== LL misses:         1,253,609  (      940,367 rd   +       313,242 wr)
+==17906== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+LineSize: 512 / 1024...
+==17969== Cachegrind, a cache and branch-prediction profiler
+==17969== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==17969== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==17969== Command: ./mult_transpuesta 1024
+==17969== 
+--17969-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 129.470721
+==17969== 
+==17969== I   refs:      7,652,670,991
+==17969== I1  misses:        8,390,013
+==17969== LLi misses:              514
+==17969== I1  miss rate:          0.11%
+==17969== LLi miss rate:          0.00%
+==17969== 
+==17969== D   refs:      3,284,737,351  (2,191,055,651 rd   + 1,093,681,700 wr)
+==17969== D1  misses:    2,296,589,385  (2,158,372,902 rd   +   138,216,483 wr)
+==17969== LLd misses:        1,279,744  (      912,998 rd   +       366,746 wr)
+==17969== D1  miss rate:          69.9% (         98.5%     +          12.6%  )
+==17969== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==17969== 
+==17969== LL refs:       2,304,979,398  (2,166,762,915 rd   +   138,216,483 wr)
+==17969== LL misses:         1,280,258  (      913,512 rd   +       366,746 wr)
+==17969== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+LineSize: 1024 / 1024...
+==18037== Cachegrind, a cache and branch-prediction profiler
+==18037== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==18037== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==18037== Command: ./mult_transpuesta 1024
+==18037== 
+--18037-- warning: L3 cache found, using its data for the LL simulation.
+Word size: 64 bits
+Execution time: 130.143750
+==18037== 
+==18037== I   refs:      7,652,670,947
+==18037== I1  misses:        8,390,101
+==18037== LLi misses:              511
+==18037== I1  miss rate:          0.11%
+==18037== LLi miss rate:          0.00%
+==18037== 
+==18037== D   refs:      3,284,737,336  (2,191,055,642 rd   + 1,093,681,694 wr)
+==18037== D1  misses:    2,439,773,984  (2,166,616,774 rd   +   273,157,210 wr)
+==18037== LLd misses:        1,305,078  (      888,085 rd   +       416,993 wr)
+==18037== D1  miss rate:          74.3% (         98.9%     +          25.0%  )
+==18037== LLd miss rate:           0.0% (          0.0%     +           0.0%  )
+==18037== 
+==18037== LL refs:       2,448,164,085  (2,175,006,875 rd   +   273,157,210 wr)
+==18037== LL misses:         1,305,589  (      888,596 rd   +       416,993 wr)
+==18037== LL miss rate:            0.0% (          0.0%     +           0.0%  )
+Generating plot...
+Could not find/open font when opening font "arial", using internal non-scalable font

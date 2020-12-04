@@ -4,9 +4,9 @@
 #!/bin/bash
 
 # inicializar variables
-Vinicio=$((1))
-Vfinal=$((16))
-Vpaso=2
+Binicio=$((32))
+Bfinal=$((1024))
+Bpaso=2
 Niter=1
 TamL1=4096
 Vias=1
@@ -14,8 +14,8 @@ LineSize=64
 N=$((256*4))
 
 
-fDAT=mult_e4_vias.dat
-fPNG=mult_cache_e4_vias.png
+fDAT=mult_e4_blocksize.dat
+fPNG=mult_cache_e4_blocksize.png
 
 # borrar el fichero DAT y el fichero PNG
 rm -f $fDAT 
@@ -30,8 +30,8 @@ touch $fDAT
 #Trasp
 #bucle for cambiando el tamano de las matrices desde Ninicio hasta Nfinal con saltos de Npaso
 
-for ((Vias = Vinicio ; Vias <= Vfinal ; Vias *= Vpaso)); do
-    echo "Vias: $Vias / $Vfinal..."
+for ((LineSize = Binicio ; LineSize <= Bfinal ; LineSize *= Bpaso)); do
+    echo "LineSize: $LineSize / $Bfinal..."
     #ejecutar trasp con valgring modificanfo las caracteristicas de las caches
     valgrind --tool=cachegrind --cachegrind-out-file=aux.dat --I1=$TamL1,$Vias,$LineSize --D1=$TamL1,$Vias,$LineSize --LL=8388608,1,64 ./mult_transpuesta $N
     #obtener D1mr y D1mw y eliminar las comas
@@ -39,7 +39,7 @@ for ((Vias = Vinicio ; Vias <= Vfinal ; Vias *= Vpaso)); do
     D1mw=$(cg_annotate aux.dat | head -n 30 | grep "TOTALS" | awk '{print $8}' | sed -e 's/,//g')
 
     #anadir todos los datos en una unica linea al final del fichero
-    echo "$Vias   $D1mr    $D1mw" >> $fDAT
+    echo "$LineSize   $D1mr    $D1mw" >> $fDAT
 
 done
 
@@ -49,9 +49,9 @@ echo "Generating plot..."
 
 #grafica de escritura
 gnuplot << END_GNUPLOT
-set title "Trasp Misses. L1: $TamL1 Bytes, N: $N, LineSize: $LineSize Bytes"
+set title "Trasp Misses. L1: $TamL1 Bytes, N: $N, Vias: $Vias"
 set ylabel "Number of Misses"
-set xlabel "Number of ways"
+set xlabel "Blocks size"
 set key right bottom
 set grid
 set term png

@@ -2,6 +2,7 @@
 #
 #$ -S /bin/bash
 #$ -cwd
+#$ -o simple.out
 #$ -j y
 
 # Anadir valgrind y gnuplot al path
