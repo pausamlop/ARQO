@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
      		arg = atoi( argv[1] );	
         else
         	arg = nproc;  
-        omp_set_num_threads(arg);
+        //omp_set_num_threads(arg);
 	nthr = omp_get_max_threads();
 	printf("Me han pedido que lance %d hilos\n", nthr);
 	
-	#pragma omp parallel private(tid)
+	#pragma omp parallel private(tid) //num_threads(14)
 	{
 		tid = omp_get_thread_num();
 		nthr = omp_get_num_threads();

@@ -4,7 +4,7 @@ FLAGS = -g -lgomp -lm -Wall -D_GNU_SOURCE -fopenmp
 
 .PHONY: clean all
 
-all: omp1 omp2 pescalar_serie pescalar_par1 edgeDetector clear
+all: omp1 omp2 pescalar_serie pescalar_par1 edgeDetector mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 clear
 
 omp1: omp1.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
@@ -20,6 +20,18 @@ pescalar_par1: pescalar_par1.c arqo4.c
 
 edgeDetector: edgeDetector.c stb_image_write.h stb_image.h
 	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector.c $(LIBS)
+
+mult_transpuesta: mult_transpuesta.c arqo4.c
+	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
+
+mult_transpuesta_bucle1: mult_transpuesta_bucle1.c arqo4.c
+	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
+
+mult_transpuesta_bucle2: mult_transpuesta_bucle2.c arqo4.c
+	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
+
+mult_transpuesta_bucle3: mult_transpuesta_bucle3.c arqo4.c
+	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
 
 stb_image.h:
 	@echo "Los ficheros de cabecera de stb se deberían descarga automáticamente"
