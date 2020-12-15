@@ -1,0 +1,105 @@
+Ejecutando script 1000…
+
+/opt/gridengine/default/spool/compute-0-1/job_scripts/88943: line 17: 1000: No such file or directory
+Ejecutando script ejercicio3.sh 1000…
+
+ejercicio3.sh: line 3:  grep: command not found
+Tiempo serie: 
+Numero de hilos   bucle1  bucle2  bucle3
+ejercicio3.sh: line 11:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+ejercicio3.sh: line 12:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+ejercicio3.sh: line 13:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+1           
+ejercicio3.sh: line 11:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+ejercicio3.sh: line 12:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+ejercicio3.sh: line 13:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+2           
+ejercicio3.sh: line 11:  grep: command not found
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+Ejecutando script ejercicio3.sh 1000…
+
+EJERCICIO 3: valor de n: 1000
+Tiempo serie: 9.473722
+Numero de hilos   bucle1  bucle2  bucle3
+1   13.005361    12.128130    12.115045
+2   9.779698    6.125641    6.142265
+3   8.160604    4.104427    4.114484
+4   7.695295    3.107014    3.126232
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh…
+
+awk: {print $1,,, st/$2, st/$3, st/$4}
+awk:           ^ syntax error
+Ejecutando script ejercicio3.sh 10…
+
+awk: {print $1,,, st/$2, st/$3, st/$4}
+awk:           ^ syntax error
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh 10…
+
+Ejecutando script ejercicio3.sh 1000…
+
+Ejecutando script ejercicio3.sh 1700…
+
+Ejecutando script ejercicio3.sh 1000…
+
+Ejecutando script ejercicio3.sh 1700…
+
+Ejecutando script ejercicio3b.sh…
+
+ejercicio3b.sh: line 17: syntax error near unexpected token `('
+ejercicio3b.sh: line 17: `for n in $seq($Ninicio, $Nincr, $Nfinal);do'
+Ejecutando script ejercicio3b.sh…
+
+seq: invalid floating point argument: 512+4
+Try `seq --help' for more information.
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+         line 0: warning: Cannot find or open file "e3_tiempo.dat"
+         line 0: warning: Cannot find or open file "e3_tiempo.dat"
+         line 0: No data in plot
+
+
+gnuplot> replot
+         ^
+         line 0: no previous plot
+
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+         line 0: warning: Cannot find or open file "e3_tiempo.dat"
+         line 0: No data in plot
+
+
+gnuplot> replot
+         ^
+         line 0: no previous plot
+
+Ejecutando script ejercicio3b.sh…
+
+Ejecutando script ejercicio3b.sh…
+
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
