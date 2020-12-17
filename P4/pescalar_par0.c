@@ -1,18 +1,14 @@
 // ----------- Arqo P4-----------------------
-// pescalar_par3
-// Versión corregida cde pescalar_par1 usando reduction
+// pescalar_par2
+// Versión corregida cde pescalar_par1
 //
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "arqo4.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
-	int size;
-	if(argc < 2) size = M;
-	else size = atoll(argv[1]);
-	
 	int nproc;
 	float *A=NULL, *B=NULL;
 	long long k=0;
@@ -20,8 +16,8 @@ int main(int argc, char **argv)
 	double sum=0;
      	
        
-	A = generateVectorOne(size);
-	B = generateVectorOne(size);
+	A = generateVectorOne(M);
+	B = generateVectorOne(M);
 	if ( !A || !B )
 	{
 		printf("Error when allocationg matrix\n");
@@ -39,10 +35,11 @@ int main(int argc, char **argv)
 	/* Bloque de computo */
 	sum = 0;
 	
-    #pragma omp parallel for reduction (+:sum)
-	for(k=0;k<size;k++)
+    #pragma omp parallel for
+	for(k=0;k<M;k++)
 	{
-		sum = sum + A[k]*B[k];
+        #pragma omp critical
+		{sum += A[k]*B[k];}
 	}
 	/* Fin del computo */
 	gettimeofday(&fin,NULL);
