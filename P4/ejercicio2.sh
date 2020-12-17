@@ -27,17 +27,12 @@ echo "Resultado de usar reduction" >> $fRES
 
 # EJERCICIO 2.5
 
-echo "EJERCICIO 2.5" >> $fRES
-echo "Resultado del programa en serie" >> $fRES
-./pescalar_serie metertamaño >> $fRES
-echo "Resultado de usar reduction" >> $fRES
-./pescalar_par3 metertamaño >> $fRES
 
-size[0]=1000
-size[1]=2000
-size[2]=3000
-size[3]=4000
-size[4]=5000
+size[0]=15000000
+size[1]=50000000
+size[2]=100000000
+size[3]=200000000
+size[4]=400000000
 
 data=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)
 old=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)

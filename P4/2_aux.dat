@@ -1,0 +1,14 @@
+EJERCICIO 2
+Resultado de usar critical
+Se han lanzado 4 hilos.
+Resultado: 1000000.000000
+Tiempo: 0.103141
+Resultado de usar atomic
+Se han lanzado 4 hilos.
+Resultado: 1000000.000000
+Tiempo: 0.075487
+Resultado de usar reduction
+Se han lanzado 4 hilos.
+Resultado: 1000000.000000
+Tiempo: 0.000751
+PRUEBAS
