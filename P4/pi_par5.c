@@ -1,5 +1,5 @@
 /*********************************************************/
-/*Cálculo PI: Método de integración - Version OpenMP	 */
+/*Cï¿½lculo PI: Mï¿½todo de integraciï¿½n - Version OpenMP	 */
 /*Clausula private + Clausula critical			 */
 /*********************************************************/
 
@@ -21,7 +21,7 @@ int main( int argc, char *argv[] )
 
 	h = 1.0 / (double)n;
 	
-	#pragma omp parallel private(x, sum) default(shared)
+	#pragma omp parallel private(x, sum, i) default(shared)
 	{
 		int tid, numThreads;
 

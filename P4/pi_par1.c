@@ -1,5 +1,5 @@
 /*********************************************************/
-/* Cálculo PI: Método de integración - Version OpenMP	 */
+/* Cï¿½lculo PI: Mï¿½todo de integraciï¿½n - Version OpenMP	 */
 /* false sharing 					 */
 /*********************************************************/
 

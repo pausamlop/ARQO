@@ -29,7 +29,8 @@ int main( int argc, char *argv[] )
 	fgets(buf, sizeof(buf), f);
 	pclose(f);
 	linesz = atoi(buf);
-	padsz = linesz / datasz;
+	padsz = atoi(argv[1]);
+	// padsz = linesz / datasz;
 	printf("Cache line size: %d bytes => padding: %d elementos\n", linesz, padsz);
 	
 	// Solicitamos memoria para la suma de cada proceso

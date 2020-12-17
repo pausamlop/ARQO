@@ -1,7 +1,7 @@
 #!/bin/bash
 
 P=4
-Extra=512
+Extra=2048
 Ninicio=$((512+$P))
 Nfinal=$((1024+512+$P+$Extra))
 Nincr=64
@@ -19,7 +19,7 @@ touch $fTimePNG
 
 for n in $(seq $Ninicio $Nincr $Nfinal);do
     echo "n: $n/$Nfinal"
-    
+
     serie_time=$(./mult_transpuesta $n|grep 'time' | awk '{print $3}')
     par_time=$(./mult_transpuesta_bucle3 $n|grep 'time' | awk '{print $3}')
     speedup=$(echo "$serie_time / $par_time"|bc -l)
