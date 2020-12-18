@@ -1,3 +1,6 @@
+// VERSION 2 DE EDGE DETECTOR
+
+
 #include <stdio.h>
 #include <stdint.h>
 #include <math.h>
@@ -6,6 +9,7 @@
 #include "stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
+#include <omp.h>
 
 #define MEDIAN 0
 #define GAUSSIAN 1
@@ -27,9 +31,9 @@ float* gaussian_kernel(int ksize, double sigma) {
         }
     }
 
-// aqui
-    for (i = 0; i < ksize; i++) {
-        for (j = 0; j < ksize; j++) {
+    // BUCLE MODIFICADO 1  
+    for (j = 0; j < ksize; j++) {
+        for (i = 0; i < ksize; i++) {
             gauss[i + ksize*j] /= sum;
         }
     }
@@ -60,6 +64,8 @@ int main(int nargs, char **argv)
     {
         printf("Usage: %s <image1> [<image2> ...]\n", argv[0]);
     }
+    int nproc=omp_get_num_procs();
+    omp_set_num_threads(nproc);  
     // For each image
     // Bucle 0
     for (int file_i = 1; file_i < nargs; file_i++)
@@ -152,13 +158,15 @@ int main(int nargs, char **argv)
             printf("[error] Num of channels=%d not supported. Only three (RGB), four (RGBA) are supported.\n", nchannels);
             continue;
         }
-        // aqui
+        
         gettimeofday(&ini,NULL);
+
+        // BUCLE MODIFICADO 2
         // RGB to grey scale
         int r, g, b;
-        for (int i = 0; i < width; i++)
+        for (int j = 0; j < height; j++)
         {
-            for (int j = 0; j < height; j++)
+            for (int i = 0; i < width; i++)
             {
                 getRGB(rgb_image, width, height, 4, i, j, &r, &g, &b);
                 grey_image[j * width + i] = (int)(0.2989 * r + 0.5870 * g + 0.1140 * b);
@@ -168,12 +176,14 @@ int main(int nargs, char **argv)
         stbi_write_jpg(grey_image_filename, width, height, 1, grey_image, 10);
         free(rgb_image);
         #endif
-        //aqui
+
+        // BUCLE MODIFICADO 3
         // Sobel edge detection
 #define PIXEL_GREY(x, y) (grey_image[(x) + (y)*width])
-        for (int i = 1; i < width - 1; i++)
+        #pragma omp parallel for
+        for (int j = 1; j < height - 1; j++)
         {
-            for (int j = 1; j < height - 1; j++)
+            for (int i = 1; i < width - 1; i++)
             {
                 int x = i - 1;
                 int y = j - 1;
@@ -193,16 +203,17 @@ int main(int nargs, char **argv)
 
         // Denoising
 #define PIXEL_EDGES(x, y) (edges[(x) + (y)*width_edges]);
-        //aqui
+        
         int x = 0, y = 0, k = 0;
         // Use salt&pepper filter
         if (TYPE_FILTER == MEDIAN)
         {
             printf("[info] Using median denoising...\n");
-            for (int i = radius; i < width_edges - radius; i++)
+
+            // BUCLE MODIFICADO 4
+            for (int j = radius; j < height_edges - radius; j++)
             {
-                
-                for (int j = radius; j < height_edges - radius; j++)
+                for (int i = radius; i < width_edges - radius; i++)
                 {
                     y = j - radius;
                     x = i - radius;
@@ -224,10 +235,11 @@ int main(int nargs, char **argv)
             printf("[info] Using gaussian denoising...\n");
             float* kernel = gaussian_kernel(2*radius+1, 1.0);
             double sum = 0;
-            //aqui
-            for (int i = radius; i < width_edges - radius; i++)
+            
+            //  BUCLE MODIFICADO 5
+            for (int j = radius; j < height_edges - radius; j++)
             {
-                for (int j = radius; j < height_edges - radius; j++)
+                for (int i = radius; i < width_edges - radius; i++)
                 {
                     x = i - radius;
                     y = j - radius;
