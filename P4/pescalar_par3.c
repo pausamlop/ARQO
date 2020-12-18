@@ -31,9 +31,8 @@ int main(int argc, char **argv)
 	}
 	
         nproc=omp_get_num_procs();
-        omp_set_num_threads(nproc);   
-     
-        printf("Se han lanzado %d hilos.\n",nproc);
+        //omp_set_num_threads(nproc);   
+        printf("Se han lanzado %d hilos.\n",omp_get_max_threads());
 
 	gettimeofday(&ini,NULL);
 	/* Bloque de computo */

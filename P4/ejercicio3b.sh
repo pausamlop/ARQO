@@ -1,10 +1,11 @@
 #!/bin/bash
 
 P=4
-Extra=2048
+Extra=$((512))
 Ninicio=$((512+$P))
 Nfinal=$((1024+512+$P+$Extra))
 Nincr=64
+Niter=3
 
 fTime=e3_tiempo.dat
 fTimePNG=e3_grafica_tiempo.png
@@ -19,9 +20,17 @@ touch $fTimePNG
 
 for n in $(seq $Ninicio $Nincr $Nfinal);do
     echo "n: $n/$Nfinal"
-
-    serie_time=$(./mult_transpuesta $n|grep 'time' | awk '{print $3}')
-    par_time=$(./mult_transpuesta_bucle3 $n|grep 'time' | awk '{print $3}')
+    serie_time=0
+    par_time=0
+    for i in $(seq 1 $Niter);do
+        echo "  iteracion: $i"
+        st=$(./mult_transpuesta $n|grep 'time' | awk '{print $3}')
+        pt=$(./mult_transpuesta_bucle3 $n|grep 'time' | awk '{print $3}')
+        serie_time=$(echo "$serie_time + $st"|bc -l)
+        par_time=$(echo "$par_time + $pt"|bc -l)
+    done
+    serie_time=$(echo "$serie_time/$Niter"|bc -l)
+    par_time=$(echo "$par_time/$Niter"|bc -l)
     speedup=$(echo "$serie_time / $par_time"|bc -l)
 
     echo "$n    $serie_time $par_time   $speedup" >> $fTime

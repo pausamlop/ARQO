@@ -1,8 +1,5 @@
 #!/bin/bash
 
-fTime=e4_5_tabla.png
-rm -f $fTime
-
 n=100
 
 tiempo6=0

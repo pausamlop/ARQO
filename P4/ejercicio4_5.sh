@@ -1,6 +1,6 @@
 #!/bin/bash
 
-fTime=e4_5_tabla.png
+fTime=e4_5_tabla.dat
 rm -f $fTime
 
 for i in 1 2 4 6 7 8 9 10 12

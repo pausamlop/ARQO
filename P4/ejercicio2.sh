@@ -16,6 +16,8 @@ rm -f $fDAT2
 touch $fRES
 touch $fDAT2
 touch $fDAT1
+touch $fPNG1
+touch $fPNG2
 
 echo "EJERCICIO 2" >> $fRES
 echo "Resultado de usar critical" >> $fRES
@@ -47,7 +49,7 @@ for j in $(seq 0 4);do
     #recorremos las cores
     for i in $(seq 1 8);do
         export OMP_NUM_THREADS=$i
-
+        echo "Ejecutando size: ${size[$j]}, numero de threads: $i"
         if [ $i -eq 1 ];then
 
             for k in $(seq 0 4);do
@@ -56,7 +58,9 @@ for j in $(seq 0 4);do
             done
         else
             for k in $(seq 0 4);do
-                aux=$(./pescalar_par3 ${size[$j]} | grep "Tiempo" | awk '{print $2}')
+                aux=$(./pescalar_par3 ${size[$j]})
+                echo "$aux"
+                aux=$(echo "$aux"|grep "Tiempo" | awk '{print $2}')
                 data[$i]=$(echo "${data[$i]} + $aux"|bc -l)
             done
         fi

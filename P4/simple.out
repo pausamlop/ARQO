@@ -404,3 +404,162 @@ Double size: 8 bytes
 Cache line size: 64 bytes => padding: 12 elementos
 Resultado pi: 3.141593
 Tiempo 0.292147
+Ejecutando script ejercicio3b.sh…
+
+n: 516/2564
+n: 580/2564
+n: 644/2564
+n: 708/2564
+n: 772/2564
+n: 836/2564
+n: 900/2564
+n: 964/2564
+n: 1028/2564
+n: 1092/2564
+n: 1156/2564
+n: 1220/2564
+n: 1284/2564
+n: 1348/2564
+n: 1412/2564
+n: 1476/2564
+n: 1540/2564
+n: 1604/2564
+n: 1668/2564
+n: 1732/2564
+n: 1796/2564
+n: 1860/2564
+n: 1924/2564
+n: 1988/2564
+n: 2052/2564
+n: 2116/2564
+n: 2180/2564
+n: 2244/2564
+n: 2308/2564
+n: 2372/2564
+n: 2436/2564
+n: 2500/2564
+n: 2564/2564
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio3b.sh…
+
+n: 516/2564
+n: 580/2564
+n: 644/2564
+n: 708/2564
+n: 772/2564
+n: 836/2564
+n: 900/2564
+n: 964/2564
+n: 1028/2564
+n: 1092/2564
+n: 1156/2564
+n: 1220/2564
+n: 1284/2564
+n: 1348/2564
+n: 1412/2564
+n: 1476/2564
+n: 1540/2564
+n: 1604/2564
+n: 1668/2564
+n: 1732/2564
+n: 1796/2564
+n: 1860/2564
+n: 1924/2564
+n: 1988/2564
+n: 2052/2564
+n: 2116/2564
+n: 2180/2564
+n: 2244/2564
+n: 2308/2564
+n: 2372/2564
+n: 2436/2564
+n: 2500/2564
+n: 2564/2564
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio3b.sh…
+
+n: 392/1540
+n: 456/1540
+n: 520/1540
+n: 584/1540
+n: 648/1540
+n: 712/1540
+n: 776/1540
+n: 840/1540
+n: 904/1540
+n: 968/1540
+n: 1032/1540
+n: 1096/1540
+n: 1160/1540
+n: 1224/1540
+n: 1288/1540
+n: 1352/1540
+n: 1416/1540
+n: 1480/1540
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Ejecutando script ejercicio3b.sh…
+
+n: 516/1540
+  iteracion: 1
+  iteracion: 2
+n: 580/1540
+  iteracion: 1
+  iteracion: 2
+n: 644/1540
+  iteracion: 1
+  iteracion: 2
+n: 708/1540
+  iteracion: 1
+  iteracion: 2
+n: 772/1540
+  iteracion: 1
+  iteracion: 2
+n: 836/1540
+  iteracion: 1
+  iteracion: 2
+n: 900/1540
+  iteracion: 1
+  iteracion: 2
+n: 964/1540
+  iteracion: 1
+  iteracion: 2
+n: 1028/1540
+  iteracion: 1
+  iteracion: 2
+n: 1092/1540
+  iteracion: 1
+  iteracion: 2
+n: 1156/1540
+  iteracion: 1
+  iteracion: 2
+n: 1220/1540
+  iteracion: 1
+  iteracion: 2
+n: 1284/1540
+  iteracion: 1
+  iteracion: 2
+n: 1348/1540
+  iteracion: 1
+  iteracion: 2
+n: 1412/1540
+  iteracion: 1
+  iteracion: 2
+n: 1476/1540
+  iteracion: 1
+  iteracion: 2
+n: 1540/1540
+  iteracion: 1
+  iteracion: 2
+Generating time plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
+Generating speedup plot...
+Could not find/open font when opening font "arial", using internal non-scalable font
