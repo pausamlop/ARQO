@@ -4,7 +4,7 @@ FLAGS = -g -lgomp -lm -Wall -D_GNU_SOURCE -fopenmp -O3
 
 .PHONY: clean all
 
-all: omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par3_v2 pescalar_par0 edgeDetector mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7 clear
+all: omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par3_v2 pescalar_par0 edgeDetector edgeDetector2 edgeDetector3 edgeDetector4 edgeDetector5 edgeDetector6 edgeDetector7 mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7 clear
 
 omp1: omp1.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
@@ -32,6 +32,24 @@ pescalar_par3_v2: pescalar_par3_v2.c arqo4.c
 
 edgeDetector: edgeDetector.c stb_image_write.h stb_image.h
 	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector.c $(LIBS)
+	
+edgeDetector2: edgeDetector2.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector2.c $(LIBS)
+
+edgeDetector3: edgeDetector3.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector3.c $(LIBS)
+
+edgeDetector4: edgeDetector4.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector4.c $(LIBS)
+
+edgeDetector5: edgeDetector5.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector5.c $(LIBS)
+
+edgeDetector6: edgeDetector6.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector6.c $(LIBS)
+
+edgeDetector7: edgeDetector7.c stb_image_write.h stb_image.h
+	gcc $(FLAGS) -std=gnu99 $(LIB_DIR) -o $@ edgeDetector7.c $(LIBS)
 
 mult_transpuesta: mult_transpuesta.c arqo4.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
@@ -84,7 +102,7 @@ stb_image_write.h:
 	wget --no-check-certificate https://raw.githubusercontent.com/nothings/stb/master/stb_image_write.h
 
 clean:
-	rm -f *.o *~ omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par0 edgeDetector mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7
+	rm -f *.o *~ omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par0 edgeDetector edgeDetector2 edgeDetector3 edgeDetector4 edgeDetector5 edgeDetector6 edgeDetector7 mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7
 	
 clear:
 	rm -f *.o *~
