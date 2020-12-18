@@ -1,10 +1,10 @@
 LIBS = 
 LIB_DIR =  
-FLAGS = -g -lgomp -lm -Wall -D_GNU_SOURCE -fopenmp
+FLAGS = -g -lgomp -lm -Wall -D_GNU_SOURCE -fopenmp -O3
 
 .PHONY: clean all
 
-all: omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par0 edgeDetector mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7 clear
+all: omp1 omp2 pescalar_serie pescalar_par1 pescalar_par2 pescalar_par3 pescalar_par3_v2 pescalar_par0 edgeDetector mult_transpuesta mult_transpuesta_bucle1 mult_transpuesta_bucle2 mult_transpuesta_bucle3 pi_serie pi_par1 pi_par2 pi_par3 pi_par3_v2 pi_par4 pi_par5 pi_par6 pi_par7 clear
 
 omp1: omp1.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
@@ -25,6 +25,9 @@ pescalar_par2: pescalar_par2.c arqo4.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
 
 pescalar_par3: pescalar_par3.c arqo4.c
+	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
+
+pescalar_par3_v2: pescalar_par3_v2.c arqo4.c
 	gcc $(FLAGS) $(LIB_DIR) -o $@ $^ $(LIBS)
 
 edgeDetector: edgeDetector.c stb_image_write.h stb_image.h

@@ -5,7 +5,7 @@ Extra=$((512))
 Ninicio=$((512+$P))
 Nfinal=$((1024+512+$P+$Extra))
 Nincr=64
-Niter=3
+Niter=5
 
 fTime=e3_tiempo.dat
 fTimePNG=e3_grafica_tiempo.png

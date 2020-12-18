@@ -29,12 +29,17 @@ echo "Resultado de usar reduction" >> $fRES
 
 # EJERCICIO 2.5
 
+size[0]=10000
+size[1]=50000
+size[2]=100000
+size[3]=300000
+size[4]=500000
 
-size[0]=15000000
-size[1]=50000000
-size[2]=100000000
-size[3]=200000000
-size[4]=400000000
+# size[0]=15000000
+# size[1]=50000000
+# size[2]=100000000
+# size[3]=200000000
+# size[4]=400000000
 
 data=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)
 old=(0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)
@@ -65,25 +70,13 @@ for j in $(seq 0 4);do
             done
         fi
         data[$i]=$(echo "${data[$i]} / $var"|bc -l)
-        
+        su[$i]=$(echo "${data[1]}/${data[$i]}"|bc -l)
     done
 
     # cada tamaño con sus 8 tiempos correspondientes
     echo "${size[$j]} ${data[1]} ${data[2]} ${data[3]} ${data[4]} ${data[5]} ${data[6]} ${data[7]} ${data[8]}" >> $fDAT1
 
-    # si no es el primero calculamos el speedup
-    if [ $j -ne 0 ];then
-        for k in $(seq 1 8);do
-            su[$k]=$(echo "${data[$k]} / ${old[$k]} "|bc -l)
-        done
-        echo "${size[$j]} ${su[1]} ${su[2]} ${su[3]} ${su[4]} ${su[5]} ${su[6]} ${su[7]} ${su[8]}" >> $fDAT2
-    fi
-
-    for i in $(seq 1 8);do
-        old[$i]=${data[$i]}
-        data[$i]=0.0
-    done
-
+    echo "${size[$j]} ${su[1]} ${su[2]} ${su[3]} ${su[4]} ${su[5]} ${su[6]} ${su[7]} ${su[8]}" >> $fDAT2
     
 done
 
